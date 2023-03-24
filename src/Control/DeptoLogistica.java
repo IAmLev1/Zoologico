@@ -41,27 +41,27 @@ public class DeptoLogistica {
     
     
 
-//    public static void generarPdf() throws DocumentException {
-//        Document documento = new Document();
-//        try {
-//            // Crear una instancia de PdfWriter y asociarla con el documento
-//            PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/usuario/Documents/tabla.pdf"));
-//
-//            // Abrir el documento
-//            documento.open();
-//
-//            PdfPTable tabla = new PdfPTable(6);
-//
-//            // Agregar las celdas de la primera fila
-//            tabla.addCell("PLAN");
-//            tabla.addCell("VALOR");
-//            tabla.addCell("CANTIDAD");
-//            tabla.addCell("VALOR VENTA");
-//            tabla.addCell("DESCUENTOS");
-//            tabla.addCell("TOTAL");
-//
-//            //Agregar los datos que me pide el reporte
-//            for (int i = 0; i < Clientes.size(); i++) {
+    public static void generarPdf() throws DocumentException {
+        Document documento = new Document();
+        try {
+            // Crear una instancia de PdfWriter y asociarla con el documento
+            PdfWriter.getInstance(documento, new FileOutputStream("/src/Pdf/tabla.pdf"));
+
+            // Abrir el documento
+            documento.open();
+
+            PdfPTable tabla = new PdfPTable(6);
+
+            // Agregar las celdas de la primera fila
+            tabla.addCell("PLAN");
+            tabla.addCell("VALOR");
+            tabla.addCell("CANTIDAD");
+            tabla.addCell("VALOR VENTA");
+            tabla.addCell("DESCUENTOS");
+            tabla.addCell("TOTAL");
+
+            //Agregar los datos que me pide el reporte
+//            for (int i = 0; i < listaClientes.size(); i++) {
 //                tabla.addCell(listaBoletas.get(i).getTipoPlan());
 //                tabla.addCell(String.valueOf(listaBoletas.get(i).getValorUnidad()));
 //                tabla.addCell(String.valueOf(listaBoletas.get(i).getCantBoletas()));
@@ -69,16 +69,16 @@ public class DeptoLogistica {
 //                tabla.addCell(String.valueOf(listaBoletas.get(i).getDescuento()));
 //                tabla.addCell(String.valueOf(listaBoletas.get(i).getCostoTotal()));
 //            }
-//
-//            // Agregar la tabla al documento
-//            documento.add(tabla);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        } finally {
-//            // Cerrar el documento
-//            documento.close();
-//        }
-//    }
+
+            // Agregar la tabla al documento
+            documento.add(tabla);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Cerrar el documento
+            documento.close();
+        }
+    }
 //
 //    public void facture(int num) {
 //        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
