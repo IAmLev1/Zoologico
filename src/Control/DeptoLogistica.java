@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import Model.Client;
 import Model.AnimalSalvaje;
-import Model.AnimalesDomesticos;
+import Model.AnimalDomestico;
 import java.util.ArrayList;
 
 /**
@@ -21,7 +21,7 @@ import java.util.ArrayList;
  */
 public class DeptoLogistica {
 
-    private static ArrayList<AnimalesDomesticos> listaAnimalesDomesticos = new ArrayList<>();
+    private static ArrayList<AnimalDomestico> listaAnimalesDomesticos = new ArrayList<>();
     private static ArrayList<AnimalSalvaje> listaAnimalesSalvajes = new ArrayList<>();
     private static ArrayList<Client> listaClientes = new ArrayList<>();
 
@@ -33,7 +33,7 @@ public class DeptoLogistica {
         listaAnimalesSalvajes.add(aSalvaje);
     }
     
-    public static void ingresar(AnimalesDomesticos aDomesticos) {
+    public static void ingresar(AnimalDomestico aDomesticos) {
         listaAnimalesDomesticos.add(aDomesticos);
     }
     

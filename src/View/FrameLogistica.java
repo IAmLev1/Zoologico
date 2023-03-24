@@ -1,13 +1,26 @@
 package View;
 
+import Model.Animal;
+import Model.AnimalDomestico;
+import Model.AnimalSalvaje;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Levi.ing
  */
 public class FrameLogistica extends javax.swing.JFrame {
-
+    private List<Animal> animales;
+    private List<String> retiros;
+    private List<String> adopciones;
+    
     public FrameLogistica() {
         initComponents();
+        animales = new ArrayList<Animal>();
+        retiros = new ArrayList<String>();
+        adopciones = new ArrayList<String>();
         this.setLocationRelativeTo(null);
     }
 
@@ -31,13 +44,13 @@ public class FrameLogistica extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtRazaAnimal = new javax.swing.JTextField();
         txtCodigoAnimal = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbSalvaje = new javax.swing.JRadioButton();
+        rbDomestico = new javax.swing.JRadioButton();
         jLabel17 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbNivelPeli = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         txtNombreAnimal1 = new javax.swing.JTextField();
-        btnRetiroAnimal = new javax.swing.JButton();
+        btnIngresoAnimal = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -103,45 +116,51 @@ public class FrameLogistica extends javax.swing.JFrame {
         jPanel2.add(txtRazaAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, -1));
         jPanel2.add(txtCodigoAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 60, -1));
 
-        jRadioButton1.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
-        jRadioButton1.setText("Salvaje");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        rbSalvaje.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
+        rbSalvaje.setText("Salvaje");
+        rbSalvaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                rbSalvajeActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
+        jPanel2.add(rbSalvaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
 
-        jRadioButton2.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
-        jRadioButton2.setText("Doméstico");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        rbDomestico.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
+        rbDomestico.setText("Doméstico");
+        rbDomestico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                rbDomesticoActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
+        jPanel2.add(rbDomestico, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel17.setText("Tipo de animal:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jComboBox1.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 50, -1));
+        cbNivelPeli.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
+        cbNivelPeli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        jPanel2.add(cbNivelPeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 50, -1));
 
         jLabel18.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel18.setText("Nivel de peligrosidad:");
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 160, -1));
-        jPanel2.add(txtNombreAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 40, 120, -1));
 
-        btnRetiroAnimal.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-        btnRetiroAnimal.setText("Ingresar Animal");
-        btnRetiroAnimal.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreAnimal1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRetiroAnimalActionPerformed(evt);
+                txtNombreAnimal1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnRetiroAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
+        jPanel2.add(txtNombreAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 40, 120, -1));
+
+        btnIngresoAnimal.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
+        btnIngresoAnimal.setText("Ingresar Animal");
+        btnIngresoAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresoAnimalActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnIngresoAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 370, 280));
 
@@ -196,6 +215,11 @@ public class FrameLogistica extends javax.swing.JFrame {
 
         jButtonAdoptarAnimal.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jButtonAdoptarAnimal.setText("Adoptar Animal");
+        jButtonAdoptarAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAdoptarAnimalActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButtonAdoptarAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 350, 410));
@@ -233,36 +257,94 @@ public class FrameLogistica extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRetiroAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiroAnimalActionPerformed
-        /*
-        * davinson aqui recorres el arrays de animales ingresados 
-        * y si es igual al txtAnimalbuscado.getText
-        * lo eliminas del arrays y sha 
-        */
-    }//GEN-LAST:event_btnRetiroAnimalActionPerformed
+    private void btnIngresoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoAnimalActionPerformed
+        Animal animal = new Animal();
+        String nomAnimal, nivelPeligrosidad, raza;
+        int codAnimal;
+        if (rbSalvaje.isSelected()) {
+            nomAnimal = txtNombreAnimal1.getText();
+            nivelPeligrosidad = (String) cbNivelPeli.getSelectedItem();
+            codAnimal = Integer.parseInt(txtCodigoAnimal.getText());
+            animal = new AnimalSalvaje(nivelPeligrosidad, codAnimal, nomAnimal);
+        }
+        else if (rbDomestico.isSelected()) {
+            nomAnimal = txtNombreAnimal1.getText();
+            raza = txtRazaAnimal.getText();
+            codAnimal = Integer.parseInt(txtCodigoAnimal.getText());
+            animal = new AnimalDomestico(raza, codAnimal, nomAnimal);
+        }
+        
+        animales.add(animal);
+    }//GEN-LAST:event_btnIngresoAnimalActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void rbSalvajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSalvajeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_rbSalvajeActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void rbDomesticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbDomesticoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_rbDomesticoActionPerformed
 
     private void btnRetiroAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiroAnimal1ActionPerformed
-        // TODO add your handling code here:
+        String motivoRetiro, retiro;
+        int codAnimal, codAnimalRetiro;
+        codAnimal = Integer.parseInt(txtCodigoAnimalBusq.getText());
+        motivoRetiro = txtMotivoRetiro.getText();
+        for (int i = 0; i < animales.size(); i++) {
+            if (animales.get(i).getCodigo() == codAnimal) {
+                animales.remove(i);
+                retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado.\nMotivo: " + motivoRetiro;
+                retiros.add(retiro);
+                JOptionPane.showMessageDialog(null, "El ánimal ha sido eliminado exitosamente");
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "No se ha encontrado ningún animal con este código");
+            }
+        }
     }//GEN-LAST:event_btnRetiroAnimal1ActionPerformed
+
+    private void txtNombreAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreAnimal1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreAnimal1ActionPerformed
+
+    private void jButtonAdoptarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdoptarAnimalActionPerformed
+        String cedula, nombre, correo, adopcion;
+        int codAnim, edad;
+        
+        cedula = txtCedulaAdop.getText();
+        nombre = txtNombreAdop.getText();
+        correo = txtCorreoAdop.getText();
+        codAnim = Integer.parseInt(txtCodigAnimalAdop.getText());
+        edad = Integer.parseInt(txtEdadAdop.getText());
+        
+        if (edad >= 18) {
+            for (int i = 0; i < animales.size(); i++) {
+                if (animales.get(i).getCodigo() == codAnim && animales.get(i).getClass().getName().equals("AnimalDomestico")) {
+                    adopcion = "El animal con el código: " + codAnim + "ha sido adoptado por: " + nombre;
+                    animales.remove(i);
+                    adopciones.add(adopcion);
+                    JOptionPane.showMessageDialog(null, "Adopçao exitosa");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "No se ha encontrado animal con este código o el código ingresado pertenece a un animal salvaje");
+                }
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Debe ser mayor de edad para llevar a cabo la adopción");
+        }
+    }//GEN-LAST:event_jButtonAdoptarAnimalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Logo;
     private javax.swing.JLabel NombreEmpresa;
-    private javax.swing.JButton btnRetiroAnimal;
+    private javax.swing.JButton btnIngresoAnimal;
     private javax.swing.JButton btnRetiroAnimal1;
+    private javax.swing.JComboBox<String> cbNivelPeli;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAdoptarAnimal;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -285,8 +367,8 @@ public class FrameLogistica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton rbDomestico;
+    private javax.swing.JRadioButton rbSalvaje;
     private javax.swing.JTextField txtCedulaAdop;
     private javax.swing.JTextField txtCodigAnimalAdop;
     private javax.swing.JTextField txtCodigoAnimal;

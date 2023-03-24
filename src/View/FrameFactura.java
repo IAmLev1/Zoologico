@@ -133,7 +133,7 @@ public class FrameFactura extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
         jLabel24.setText("Factura de venta : 1234 - 56789");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 260, 30));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 300, 30));
 
         jLabel25.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel25.setText("SUBTOTAL");
