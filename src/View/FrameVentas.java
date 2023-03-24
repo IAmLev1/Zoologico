@@ -554,6 +554,7 @@ public class FrameVentas extends javax.swing.JFrame {
             if(clientes.get(i).getCedula().equals(txtCedula.getText())) {
                 clientes.get(i).setDinero(valorTotal);
                 clientes.get(i).setLvlFrecuencia(clientes.get(i).getLvlFrecuencia()+0.2f);
+                jLabel11.setText(Float.toString(clientes.get(i).getLvlFrecuencia()));
             }
         }
     }//GEN-LAST:event_agregarCompraActionPerformed
