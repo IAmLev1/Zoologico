@@ -1,5 +1,6 @@
 package Control;
 
+import Model.Animal;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -10,7 +11,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import Model.Client;
-
+import Model.AnimalSalvaje;
+import Model.AnimalesDomesticos;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,110 +21,26 @@ import Model.Client;
  */
 public class DeptoLogistica {
 
-    //private Client client = new Client();
+    private static ArrayList<AnimalesDomesticos> listaAnimalesDomesticos = new ArrayList<>();
+    private static ArrayList<AnimalSalvaje> listaAnimalesSalvajes = new ArrayList<>();
+    private static ArrayList<Client> listaClientes = new ArrayList<>();
 
-//    public void ingresarAnimalSalvaje() throws IOException {
-//        Actions action = new Actions();
-//        Actions action2 = new Actions();
-//
-//        String np = action.leerString("Nivel de peligrosidad:");
-//        String na = action.leerString("Nombre del animal:");
-//        int ca = action.leerInt("Codigo del animal:");
-//        AnimalSalvaje as = new AnimalSalvaje(np, ca, na);
-//        action2.print("Ingresado correctamente :" + as.toString());
-//    }
-//
-//    public void ingresarDomestico() throws IOException {
-//        Actions action = new Actions();
-//        Actions action2 = new Actions();
-//
-//        String np = action.leerString("Uso:");
-//        String na = action.leerString("Nombre del animal:");
-//        int ca = action.leerInt("Codigo del animal:");
-//        AnimalesDomesticos as = new AnimalesDomesticos(np, ca, na);
-//        action2.print("Ingresado correctamente :" + as.toString());
-//    }
-//    
-//    public void ingresarCliente() throws IOException{
-//        Actions action = new Actions();
-//        Actions action2 = new Actions();
-//        
-//        String name = action.leerString("Nombre del cliente: ");
-//        String dni = action.leerString("Numero de idenficacion del cliente: ");
-//        int age = action.leerInt("Edad del cliente: ");
-//        float money= action.leerFloat("Dinero a recibido: ");
-//        client = new Client(name, dni, age, money);
-//        action2.print("bienvenido"+client.getNombre());
-//    }
-//
-//    public void admonZoo() throws IOException {
-//        Actions action = new Actions();
-//        Actions action2 = new Actions();
-//
-//        int num = 0;
-//        do {
-//            num = action2.leerInt("Que desea hacer: \n 1 COMPRAR PLAN \n 2 para xxxxx \n 3 INGRESAR ANIMAL");
-//        } while (num < 1 && num > 3);
-//
-//        if (num == 1) {
-//            action.print("PLANES");
-//            menuPlan();
-//        } else {
-//            if (num == 2) {
-//                action.print("---XXXXXX--- \n");
-//            } else {
-//                action.print("---INGRESO DE ANIMAL--- \n");
-//                menuIngresoAnimal();
-//            }
-//        }
-//        
-//        
-//    }
-//
-//    public void menuPlan() throws IOException {
-//        Actions action2 = new Actions();
-//        //Actions action = new Actions();
-//        int num = 0;
-//        do {
-//            BuyTokens.boletaN1();
-//            BuyTokens.boletaN2();
-//            BuyTokens.boletaN3();
-//            num = action2.leerInt("Ingrese el numero del plan que desea");
-//        } while (num < 1 && num > 3);
-//
-//        if (num == 1) {
-//            BuyTokens.boletaN1();
-//            ingresarCliente();
-//        } else {
-//            if (num == 2) {
-//                BuyTokens.boletaN2();
-//                ingresarCliente();
-//            } else {
-//                BuyTokens.boletaN3();
-//                ingresarCliente();
-//            }
-//        }
-//        
-//        facture(num);
-//    }
-//    
-//    public void menuIngresoAnimal() throws IOException{
-//        Actions action2 = new Actions();
-//        Actions action = new Actions();
-//        int num = 0;
-//        do {
-//            action.print("1. Animal Salvaje");
-//            action.print("2. Animal Domesticos");
-//            num = action2.leerInt("Ingrese que tipo de animal va ingresar");
-//        } while (num < 1 || num > 3);
-//        
-//        if(num==1){
-//            ingresarAnimalSalvaje();
-//        }
-//        else{
-//            ingresarDomestico();
-//        }
-//    }
+    public static void ingresar(Client cliente) {
+        listaClientes.add(cliente);
+    }
+
+    public static void ingresar(AnimalSalvaje aSalvaje) {
+        listaAnimalesSalvajes.add(aSalvaje);
+    }
+    
+    public static void ingresar(AnimalesDomesticos aDomesticos) {
+        listaAnimalesDomesticos.add(aDomesticos);
+    }
+    
+    
+    
+    
+
 //    public static void generarPdf() throws DocumentException {
 //        Document documento = new Document();
 //        try {
