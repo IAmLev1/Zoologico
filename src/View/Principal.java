@@ -28,7 +28,7 @@ public class Principal extends javax.swing.JFrame {
 
         Logo = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         NombreEmpresa = new javax.swing.JLabel();
         jButtonIrVentas = new javax.swing.JButton();
         jButtonIrLogistica = new javax.swing.JButton();
@@ -41,9 +41,11 @@ public class Principal extends javax.swing.JFrame {
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.png"))); // NOI18N
         getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 160, 120));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cartel.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 370, 360));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 250, 300));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CartelLogistica.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 280, 280));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CartelVentas.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 280, 280));
 
         NombreEmpresa.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         NombreEmpresa.setText("LOS MIPAI");
@@ -51,7 +53,7 @@ public class Principal extends javax.swing.JFrame {
 
         jButtonIrVentas.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jButtonIrVentas.setText("Ir a Ventas");
-        getContentPane().add(jButtonIrVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
+        getContentPane().add(jButtonIrVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
 
         jButtonIrLogistica.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jButtonIrLogistica.setText("Ir a Logistica");
@@ -60,7 +62,7 @@ public class Principal extends javax.swing.JFrame {
                 jButtonIrLogisticaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonIrLogistica, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, -1, -1));
+        getContentPane().add(jButtonIrLogistica, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 36)); // NOI18N
         jLabel2.setText("Zoológico Los Mipai");
@@ -84,7 +86,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonIrVentas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
