@@ -36,8 +36,8 @@ public class FrameLogistica extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
         NombreEmpresa = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonVolver = new javax.swing.JButton();
+        jButtonVerListaAnimales = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -88,15 +88,25 @@ public class FrameLogistica extends javax.swing.JFrame {
         NombreEmpresa.setText("LOS MIPAI");
         jPanel1.add(NombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
-        jButton2.setText("Volver");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 110, 40));
+        jButtonVolver.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
+        jButtonVolver.setText("Volver");
+        jButtonVolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 110, 40));
 
-        jButton3.setFont(new java.awt.Font("Kristen ITC", 0, 14)); // NOI18N
-        jButton3.setText("Ver lista de animales");
-        jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 180, 40));
+        jButtonVerListaAnimales.setFont(new java.awt.Font("Kristen ITC", 0, 14)); // NOI18N
+        jButtonVerListaAnimales.setText("Ver lista de animales");
+        jButtonVerListaAnimales.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonVerListaAnimales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVerListaAnimalesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonVerListaAnimales, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 180, 40));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true), "Ingresar Animal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 18))); // NOI18N
         jPanel2.setOpaque(false);
@@ -335,6 +345,18 @@ public class FrameLogistica extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonAdoptarAnimalActionPerformed
 
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Principal main = new Principal();
+        main.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonVolverActionPerformed
+
+    private void jButtonVerListaAnimalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerListaAnimalesActionPerformed
+        FrameListaAnimal FListaAnimal = new FrameListaAnimal();
+        FListaAnimal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonVerListaAnimalesActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Logo;
@@ -342,9 +364,9 @@ public class FrameLogistica extends javax.swing.JFrame {
     private javax.swing.JButton btnIngresoAnimal;
     private javax.swing.JButton btnRetiroAnimal1;
     private javax.swing.JComboBox<String> cbNivelPeli;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAdoptarAnimal;
+    private javax.swing.JButton jButtonVerListaAnimales;
+    private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
