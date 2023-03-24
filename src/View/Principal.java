@@ -1,20 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package View;
 
-/**
- *
- * @author Levi.ing
- */
 public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     */
     public Principal() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -41,7 +31,7 @@ public class Principal extends javax.swing.JFrame {
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.png"))); // NOI18N
         getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 160, 120));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CartelLogistica.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CartelLogistica1.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 280, 280));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CartelVentas.png"))); // NOI18N
@@ -53,6 +43,11 @@ public class Principal extends javax.swing.JFrame {
 
         jButtonIrVentas.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jButtonIrVentas.setText("Ir a Ventas");
+        jButtonIrVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIrVentasActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonIrVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
 
         jButtonIrLogistica.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
@@ -75,8 +70,16 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonIrLogisticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIrLogisticaActionPerformed
-        // TODO add your handling code here:
+        FrameLogistica FLog = new FrameLogistica();
+        FLog.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonIrLogisticaActionPerformed
+
+    private void jButtonIrVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIrVentasActionPerformed
+        FrameVentas Fvent = new FrameVentas();
+        Fvent.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonIrVentasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
