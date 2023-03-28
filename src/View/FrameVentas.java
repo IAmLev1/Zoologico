@@ -4,9 +4,11 @@
  */
 package View;
 
+import Model.Adicion;
 import java.util.ArrayList;
 import java.util.List;
 import Model.Client;
+import Model.Plan;
 
 /**
  *
@@ -15,6 +17,7 @@ import Model.Client;
 public class FrameVentas extends javax.swing.JFrame {
     
      private List<Client> clientes;
+     private FrameLogistica frameLog;
     /**
      * Creates new form Frame2
      */
@@ -244,7 +247,7 @@ public class FrameVentas extends javax.swing.JFrame {
         jList5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jList5.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         jList5.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "           === PLAN 5 ===", "                 (Familiar)", "- Ingreso de 4 personas o mas.", "(por cada persona mas tendrá ", "un valor de $23,000).", "- Tour por el zoo.", "- Espectaculo de delfines.", "- Ingreso a zona verde.", " ", "Precio:", "                 $ 78,000", " " };
+            String[] strings = { "           === PLAN 5 ===", "                 (Familiar)", "- Ingreso de 4 personas.", "- Tour por el zoo.", "- Espectaculo de delfines.", "- Ingreso a zona verde.", " ", "Precio:", "                 $ 78,000", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -445,7 +448,7 @@ public class FrameVentas extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnNuevoClienteActionPerformed
-
+    
     private void btnIngresoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoClienteActionPerformed
         // TODO add your handling code here:
         btnNuevoCliente.setEnabled(true);
@@ -453,6 +456,7 @@ public class FrameVentas extends javax.swing.JFrame {
         String nombre, cedula, correo, sexo;
         float pago;
         int edad;
+        Plan plan = null;
         
         nombre = txtNombre.getText();
         cedula = txtCedula.getText();
@@ -461,7 +465,7 @@ public class FrameVentas extends javax.swing.JFrame {
         pago = 0;
         sexo = (String)jComboBox1.getSelectedItem();
         
-        clientes.add(crearCliente(nombre, cedula, correo, edad, sexo, pago));
+        clientes.add(crearCliente(nombre, cedula, correo, edad, sexo, pago, plan));
         unlockPlans();
     }//GEN-LAST:event_btnIngresoClienteActionPerformed
 
@@ -498,78 +502,124 @@ public class FrameVentas extends javax.swing.JFrame {
     }//GEN-LAST:event_cbAdicionZV4ActionPerformed
 
     private void agregarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarCompraActionPerformed
-        float valorTotal, valorPlan, valorGorra, valorBloqueador, valorRepelente, valorComidaAnim, valorMontRusa, valorFotoFiton, valorFogata,
-                valorTobogan, valorCapybaras, valorCamCarpinchos, valorCaniaPescar, valorGorroPesca, valorPaseoBote, valorIslaKong;
-        valorPlan = valorGorra = valorBloqueador = valorRepelente = valorComidaAnim = valorMontRusa = valorFotoFiton = valorFogata = 
-                valorTobogan = valorCapybaras = valorCamCarpinchos = valorCaniaPescar = valorGorroPesca = valorPaseoBote = valorIslaKong = 0.0f;
+        float valorTotal = 0.0f;
+        Plan plan = new Plan();
+        Client client;
+        Adicion adicion;
         
         if(rbPlan1.isSelected()) {
-            valorPlan = 25000;
+            plan = new Plan (25000f, "Plan 1");
+            plan.addBeneficios("Tour por zoo");
+            plan.addBeneficios("Ingreso a zona verde");   
+            valorTotal += 25000f;
         }
         else if (rbPlan2.isSelected()) {
-            valorPlan = 55000;
+            plan = new Plan (55000f, "Plan 2");
+            plan.addBeneficios("Tour por zoo");
+            plan.addBeneficios("Ingreso a zona verde");  
+            plan.addBeneficios("Ingreso a zona de cisnes");
+            valorTotal += 55000f;
         }
         else if (rbPlan3.isSelected()) {
-            valorPlan = 63000;
+            plan = new Plan (63000f, "Plan 3");
+            plan.addBeneficios("Safari");
+            plan.addBeneficios("Ingreso a zona verde");
+            plan.addBeneficios("Paseo en caballos");
+            valorTotal += 63000f;
         }
         else if (rbPlan4.isSelected()) {
-            valorPlan = 50000;
+            plan = new Plan (50000f, "Plan 4");
+            plan.addBeneficios("Ingreso a zona verde");  
+            plan.addBeneficios("Espectáculo de delfines");
+            plan.addBeneficios("Entrada a zona de pesca");
+            valorTotal += 50000f;
         }
         else if (rbPlan5.isSelected()) {
-            valorPlan = 78000;
+            plan = new Plan (78000f, "Plan 5");
+            plan.addBeneficios("Ingreso de 4 personas");
+            plan.addBeneficios("Tour por el zoo");  
+            plan.addBeneficios("Espectáculo de delfines");
+            plan.addBeneficios("Ingreso a zona verde");
+            valorTotal += 78000f;
         }
         
         if(cbAdicionBasica1.isSelected()) {
-            valorGorra = 10000;
+            adicion = new Adicion("Gorra con logo del zoo", 10000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 10000f;
         }
         if(cbAdicionBasica2.isSelected()) {
-            valorBloqueador = 7000;
+            adicion = new Adicion("Bloqueador solar", 7000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 7000f;
         }
         if(cbAdicionBasica3.isSelected()) {
-            valorRepelente = 15000;
+            adicion = new Adicion("Repelente para mosquitos", 15000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 15000f;
         }
         if(cbAdicionEstandar1.isSelected()) {
-            valorComidaAnim = 5000;
+            adicion = new Adicion("Bote de comida para animales", 5000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 5000f;
         }
         if(cbAdicionEstandar2.isSelected()) {
-            valorMontRusa = 8000;
+            adicion = new Adicion("Paseo en semi montaña rusa", 8000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 8000f;
         }
         if(cbAdicionEstandar3.isSelected()) {
-            valorFotoFiton = 10000;
+            adicion = new Adicion("Foto con Fiton", 10000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 10000f;
         }
         if(cbAdicionZV1.isSelected()) {
-            valorFogata = 8000;
+            adicion = new Adicion("Fogata con malvaviscos", 8000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 8000f;
         }
         if(cbAdicionZV2.isSelected()) {
-            valorTobogan = 15000;
+            adicion = new Adicion("Tobogán de agua", 15000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 15000f;
         }
         if(cbAdicionZV3.isSelected()) {
-            valorCapybaras = 8000;
+            adicion = new Adicion("Xona de capybaras", 8000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 8000f;
         }
         if(cbAdicionZV4.isSelected()) {
-            valorCamCarpinchos = 18000;
+            adicion = new Adicion("Camisa 'Amor por los carpinchos'", 18000f);
+            plan.addAdiciones(adicion);
         }
         if(cbAdicionZP1.isSelected()) {
-            valorCaniaPescar = 35000;
+            adicion = new Adicion("Caña de pescar con carnadas", 35000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 35000f;
         }
         if(cbAdicionZP2.isSelected()) {
-            valorGorroPesca = 13000;
+            adicion = new Adicion("Gorro de pesca", 13000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 13000f;
         }
         if(cbAdicionZP3.isSelected()) {
-            valorPaseoBote = 10000;
+            adicion = new Adicion("Paseo en bote por el lago de pesca", 10000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 10000f;
         }
         if(cbAdicionZP4.isSelected()) {
-            valorIslaKong = 17000;
+            adicion = new Adicion("Visita a la isla Kong", 17000f);
+            plan.addAdiciones(adicion);
+            valorTotal += 17000f;
         }
-        
-        valorTotal = valorPlan +  valorGorra + valorBloqueador + valorRepelente + valorComidaAnim + valorMontRusa + valorFotoFiton + valorFogata + 
-                valorTobogan + valorCapybaras + valorCamCarpinchos + valorCaniaPescar + valorGorroPesca + valorPaseoBote + valorIslaKong;
         
         for (int i = 0; i < clientes.size(); i++) {
             if(clientes.get(i).getCedula().equals(txtCedula.getText())) {
                 clientes.get(i).setDinero(valorTotal);
                 clientes.get(i).setLvlFrecuencia(clientes.get(i).getLvlFrecuencia()+0.2f);
                 jLabel11.setText(Float.toString(clientes.get(i).getLvlFrecuencia()));
+                clientes.get(i).setPlan(plan);
+                frameLog.addClientToList(clientes.get(i));
             }
         }
     }//GEN-LAST:event_agregarCompraActionPerformed
@@ -614,8 +664,8 @@ public class FrameVentas extends javax.swing.JFrame {
         rbPlan5.setEnabled(true);
     }
     
-    public Client crearCliente(String nombre, String cedula, String correo, int edad, String sexo, float pago){
-        Client cliente = new Client(nombre, cedula, correo, sexo, edad, pago);
+    public Client crearCliente(String nombre, String cedula, String correo, int edad, String sexo, float pago, Plan plan){
+        Client cliente = new Client(nombre, cedula, correo, sexo, edad, pago, plan);
         return cliente;
     }
     
