@@ -504,7 +504,7 @@ public class FrameVentas extends javax.swing.JFrame {
     private void agregarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarCompraActionPerformed
         float valorTotal = 0.0f;
         Plan plan = new Plan();
-        Client client;
+        Client client, clientToFrameLog;
         Adicion adicion;
         
         if(rbPlan1.isSelected()) {
@@ -619,7 +619,8 @@ public class FrameVentas extends javax.swing.JFrame {
                 clientes.get(i).setLvlFrecuencia(clientes.get(i).getLvlFrecuencia()+0.2f);
                 jLabel11.setText(Float.toString(clientes.get(i).getLvlFrecuencia()));
                 clientes.get(i).setPlan(plan);
-                frameLog.addClientToList(clientes.get(i));
+                clientToFrameLog = clientes.get(i);
+                frameLog.addClientToList(clientToFrameLog);
             }
         }
     }//GEN-LAST:event_agregarCompraActionPerformed
