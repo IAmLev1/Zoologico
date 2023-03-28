@@ -3,6 +3,7 @@ package View;
 import Model.Animal;
 import Model.AnimalDomestico;
 import Model.AnimalSalvaje;
+import Model.Client;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -12,12 +13,14 @@ import javax.swing.JOptionPane;
  * @author Levi.ing
  */
 public class FrameLogistica extends javax.swing.JFrame {
+    private List<Client> clientes;
     private List<Animal> animales;
     private List<String> retiros;
     private List<String> adopciones;
     
     public FrameLogistica() {
         initComponents();
+        clientes = new ArrayList<Client>();
         animales = new ArrayList<Animal>();
         retiros = new ArrayList<String>();
         adopciones = new ArrayList<String>();
@@ -345,6 +348,10 @@ public class FrameLogistica extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonAdoptarAnimalActionPerformed
 
+    public void addClientToList(Client client) {
+        clientes.add(client);
+    }
+    
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
         Principal main = new Principal();
         main.setVisible(true);
