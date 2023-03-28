@@ -288,6 +288,11 @@ public class FrameVentas extends javax.swing.JFrame {
         buttonGroup1.add(rbPlan4);
         rbPlan4.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         rbPlan4.setText("Comprar");
+        rbPlan4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbPlan4ActionPerformed(evt);
+            }
+        });
         jPanel3.add(rbPlan4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 97, 32));
 
         buttonGroup1.add(rbPlan5);
@@ -487,14 +492,15 @@ public class FrameVentas extends javax.swing.JFrame {
 
     private void rbPlan3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbPlan3ActionPerformed
         unlockBasic();
+        unlockEstandar();
         unlockZV();
-        unlockZP();
     }//GEN-LAST:event_rbPlan3ActionPerformed
 
     private void rbPlan5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbPlan5ActionPerformed
         unlockBasic();
         unlockEstandar();
         unlockZV();
+        blockCheckLZP();
     }//GEN-LAST:event_rbPlan5ActionPerformed
 
     private void cbAdicionZV4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAdicionZV4ActionPerformed
@@ -634,6 +640,13 @@ public class FrameVentas extends javax.swing.JFrame {
         main.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonVolverActionPerformed
+
+    private void rbPlan4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbPlan4ActionPerformed
+        unlockBasic();
+        unlockEstandar();
+        unlockZV(); 
+        unlockZP();
+    }//GEN-LAST:event_rbPlan4ActionPerformed
     
     void bloqueoTxt(){
         txtCedula.setEditable(false);
