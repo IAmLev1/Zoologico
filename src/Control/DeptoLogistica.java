@@ -14,6 +14,7 @@ import Model.Client;
 import Model.AnimalSalvaje;
 import Model.AnimalDomestico;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -21,24 +22,29 @@ import java.util.ArrayList;
  */
 public class DeptoLogistica {
 
-    private static ArrayList<AnimalDomestico> listaAnimalesDomesticos = new ArrayList<>();
-    private static ArrayList<AnimalSalvaje> listaAnimalesSalvajes = new ArrayList<>();
-    private static ArrayList<Client> listaClientes = new ArrayList<>();
+    private static List<Animal> listaAnimales = new ArrayList<Animal>();
+    private static List<Client> listaClientes = new ArrayList<Client>();
     
 
-    public static void ingresar(Client cliente) {
+    public void ingresar(Client cliente) {
         listaClientes.add(cliente);
     }
 
-    public static void ingresar(AnimalSalvaje aSalvaje) {
-        listaAnimalesSalvajes.add(aSalvaje);
+    public void ingresar(Animal animal) {
+        listaAnimales.add(animal);
     }
     
-    public static void ingresar(AnimalDomestico aDomesticos) {
-        listaAnimalesDomesticos.add(aDomesticos);
+    public void eliminar(int cod) {
+        for (int i = 0; i < listaAnimales.size(); i++) {
+            if(listaAnimales.get(i).getCodigo() == cod) {
+                listaAnimales.remove(i);
+            }
+        }
     }
-    
-    
+
+    public List<Animal> showListAnim () {
+        return listaAnimales;
+    }
     
     
 
