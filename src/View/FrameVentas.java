@@ -17,7 +17,7 @@ import Model.Plan;
 public class FrameVentas extends javax.swing.JFrame {
     
      private List<Client> clientes;
-     private FrameLogistica frameLog;
+     private FrameLogistica frameLog = new FrameLogistica();
     /**
      * Creates new form Frame2
      */
