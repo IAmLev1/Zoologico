@@ -24,6 +24,7 @@ public class DeptoLogistica {
     private static ArrayList<AnimalDomestico> listaAnimalesDomesticos = new ArrayList<>();
     private static ArrayList<AnimalSalvaje> listaAnimalesSalvajes = new ArrayList<>();
     private static ArrayList<Client> listaClientes = new ArrayList<>();
+    
 
     public static void ingresar(Client cliente) {
         listaClientes.add(cliente);

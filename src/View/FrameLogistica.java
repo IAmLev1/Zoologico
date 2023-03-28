@@ -13,14 +13,12 @@ import javax.swing.JOptionPane;
  * @author Levi.ing
  */
 public class FrameLogistica extends javax.swing.JFrame {
-    private List<Client> clientes;
     private List<Animal> animales;
     private List<String> retiros;
     private List<String> adopciones;
     
     public FrameLogistica() {
         initComponents();
-        clientes = new ArrayList<Client>();
         animales = new ArrayList<Animal>();
         retiros = new ArrayList<String>();
         adopciones = new ArrayList<String>();

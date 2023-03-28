@@ -4,6 +4,7 @@
  */
 package View;
 
+import Control.DeptoLogistica;
 import Model.Adicion;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ import Model.Plan;
 public class FrameVentas extends javax.swing.JFrame {
     
      private List<Client> clientes;
-     private FrameLogistica frameLog = new FrameLogistica();
+     private DeptoLogistica deptoLog = new DeptoLogistica();
     /**
      * Creates new form Frame2
      */
@@ -626,7 +627,7 @@ public class FrameVentas extends javax.swing.JFrame {
                 jLabel11.setText(Float.toString(clientes.get(i).getLvlFrecuencia()));
                 clientes.get(i).setPlan(plan);
                 clientToFrameLog = clientes.get(i);
-                frameLog.addClientToList(clientToFrameLog);
+                deptoLog.ingresar(clientToFrameLog);
             }
         }
     }//GEN-LAST:event_agregarCompraActionPerformed
