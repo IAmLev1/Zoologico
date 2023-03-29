@@ -1,10 +1,16 @@
 package View;
 
+import Control.DeptoLogistica;
+
 public class Principal extends javax.swing.JFrame {
+
+    DeptoLogistica Depto;
 
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
+        Depto = new DeptoLogistica();
+
     }
 
     /**
@@ -22,8 +28,8 @@ public class Principal extends javax.swing.JFrame {
         NombreEmpresa = new javax.swing.JLabel();
         jButtonIrVentas = new javax.swing.JButton();
         jButtonIrLogistica = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,12 +65,12 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonIrLogistica, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, -1, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoNuevo.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 480));
+
         jLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 36)); // NOI18N
         jLabel2.setText("Zoológico Los Mipai");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoNuevo.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
