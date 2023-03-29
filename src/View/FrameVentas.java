@@ -630,6 +630,8 @@ public class FrameVentas extends javax.swing.JFrame {
                 deptoLog.ingresar(clientToFrameLog);
             }
         }
+        
+        
     }//GEN-LAST:event_agregarCompraActionPerformed
 
     private void cbAdicionBasica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAdicionBasica1ActionPerformed

@@ -346,7 +346,7 @@ public class FrameLogistica extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debe ser mayor de edad para llevar a cabo la adopción");
         }
     }//GEN-LAST:event_jButtonAdoptarAnimalActionPerformed
-  
+
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
         Principal main = new Principal();
         main.setVisible(true);

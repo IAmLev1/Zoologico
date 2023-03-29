@@ -6,13 +6,12 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import Model.Client;
-import Model.AnimalSalvaje;
-import Model.AnimalDomestico;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.PdfPCell;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,37 +44,61 @@ public class DeptoLogistica {
     public List<Animal> showListAnim () {
         return listaAnimales;
     }
-    
-    
 
-    public static void generarPdf() throws DocumentException {
+
+    public void generarPdf() throws DocumentException {
         Document documento = new Document();
         try {
             // Crear una instancia de PdfWriter y asociarla con el documento
-            PdfWriter.getInstance(documento, new FileOutputStream("/src/Pdf/tabla.pdf"));
+            PdfWriter.getInstance(documento, new FileOutputStream("src/Pdf/tablaZ00.pdf"));
 
             // Abrir el documento
             documento.open();
+            
+                    // Creo la tabla de la imagen y el texto
+        PdfPTable tablaImagenTexto = new PdfPTable(2);
+        tablaImagenTexto.setWidthPercentage(100);
 
-            PdfPTable tabla = new PdfPTable(6);
+        // Agrego la celda de la imagen
+        String rutaImagen = "src/imagenes/LOGO.png";
+        Image foto = Image.getInstance(new File(rutaImagen).getAbsolutePath());
+        foto.scaleToFit(250, 250);
+        PdfPCell celdaImagen = new PdfPCell(foto);
+        celdaImagen.setBorder(Rectangle.NO_BORDER);
+        celdaImagen.setVerticalAlignment(0);
+        celdaImagen.setHorizontalAlignment(0);
+        tablaImagenTexto.addCell(celdaImagen);
+
+        // Agrego la celda del texto
+        Paragraph texto = new Paragraph("Zoológico MI PAI\nChina japon\ntel: +57 9999999999");
+        PdfPCell celdaTexto = new PdfPCell(texto);
+        celdaTexto.setBorder(Rectangle.NO_BORDER);
+        celdaTexto.setVerticalAlignment(0);
+        celdaTexto.setHorizontalAlignment(20);
+        tablaImagenTexto.addCell(celdaTexto);
+
+        // Agrego espacio vertical entre la tabla de la imagen y el texto
+        documento.add(new Paragraph(20, " "));
+
+        // Agrego la tabla de la imagen y el texto al documento
+        documento.add(tablaImagenTexto);
+
+            PdfPTable tabla = new PdfPTable(4);
 
             // Agregar las celdas de la primera fila
-            tabla.addCell("PLAN");
-            tabla.addCell("VALOR");
-            tabla.addCell("CANTIDAD");
+            tabla.addCell("Nombre");
+            tabla.addCell("Cedula");
+            tabla.addCell("Plan");
             tabla.addCell("VALOR VENTA");
-            tabla.addCell("DESCUENTOS");
-            tabla.addCell("TOTAL");
 
             //Agregar los datos que me pide el reporte
-//            for (int i = 0; i < listaClientes.size(); i++) {
-//                tabla.addCell(listaBoletas.get(i).getTipoPlan());
-//                tabla.addCell(String.valueOf(listaBoletas.get(i).getValorUnidad()));
-//                tabla.addCell(String.valueOf(listaBoletas.get(i).getCantBoletas()));
-//                tabla.addCell(String.valueOf(listaBoletas.get(i).getValorVenta()));
-//                tabla.addCell(String.valueOf(listaBoletas.get(i).getDescuento()));
-//                tabla.addCell(String.valueOf(listaBoletas.get(i).getCostoTotal()));
-//            }
+            for (int i = 0; i < listaClientes.size(); i++) {
+                tabla.addCell(listaClientes.get(i).getNombre());
+                tabla.addCell(listaClientes.get(i).getCedula());
+                tabla.addCell("plan");
+                tabla.addCell("$ "+listaClientes.get(i).getDinero());
+
+            }
 
             // Agregar la tabla al documento
             documento.add(tabla);
