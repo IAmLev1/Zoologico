@@ -34,7 +34,7 @@ public class DeptoLogistica {
         listaAnimales.add(animal);
     }
     
-    public void eliminar(int cod) {
+    public void eliminarAnimal(int cod) {
         for (int i = 0; i < listaAnimales.size(); i++) {
             if(listaAnimales.get(i).getCodigo() == cod) {
                 listaAnimales.remove(i);
