@@ -346,10 +346,6 @@ public class FrameLogistica extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonAdoptarAnimalActionPerformed
 
-    public void addClientToList(Client client) {
-        clientes.add(client);
-    }
-    
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
         Principal main = new Principal();
         main.setVisible(true);

@@ -37,10 +37,7 @@ public class DeptoLogistica {
     public static void ingresar(AnimalDomestico aDomesticos) {
         listaAnimalesDomesticos.add(aDomesticos);
     }
-    
-    
-    
-    
+ 
 
     public static void generarPdf() throws DocumentException {
         Document documento = new Document();
