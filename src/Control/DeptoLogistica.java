@@ -109,36 +109,5 @@ public class DeptoLogistica {
             documento.close();
         }
     }
-//
-//    public void facture(int num) {
-//        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-//        Date date = new Date();
-//        Actions printX = new Actions();
-//        float cambio;
-//        printX.print("Hora de compra: " + dateFormat.format(date) + "\n");
-//        if (num == 1) {
-//            printX.print("su compra fue: Plan 1");
-//            cambio = (client.getDinero() - Plan.plan1());
-//        } else {
-//            if ((num == 2)) {
-//                printX.print("su compra fue: Plan 2");
-//                cambio = (client.getDinero() - Plan.plan2());
-//            } else {
-//                printX.print("su compra fue: Plan 3");
-//                cambio = (client.getDinero() - Plan.plan3());
-//            }
-//
-//        }
-//
-//        printX.print("Datos del cliente: " + client.getNombre());
-//        printX.print("DNI del cliente: " + client.getCedula());
-//        printX.print("Datos del vendedor/Admin: " + "Admin123");
-//        printX.print("Dinero recibido: " + client.getDinero());
-//        printX.print("Su cambio e: " + cambio);
-//
-//        printX.print("Gracias por su compra");
-//
-//    }
-//
-//
+
 }
