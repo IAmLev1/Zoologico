@@ -105,7 +105,7 @@ public class FrameFactura extends javax.swing.JFrame {
         lblTel.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lblTel.setText("Atributo correo");
         jPanel1.add(lblTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 220, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 390, 15));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 280, 15));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel13.setText("Cliente                    :");
@@ -145,7 +145,7 @@ public class FrameFactura extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
         jLabel24.setText("Factura de venta : 1234 - 56789");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 250, 30));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 310, 30));
 
         jLabel25.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel25.setText("SUBTOTAL");
@@ -209,8 +209,8 @@ public class FrameFactura extends javax.swing.JFrame {
         c = deptolog.showListClien();
         for(int i=0; i < c.size(); i++){
             if(c.get(i).getCedula().equals(cedula))
-            lblNom.setText(c.get(i).getNombre());
             lblCed.setText(c.get(i).getCedula());
+            lblNom.setText(c.get(i).getNombre());
             lblTel.setText(c.get(i).getCorreo());
             lblCantidad.setText(""+c.get(i).getContAdiciones());
             lblNomInst1.setText(c.get(i).getPlan().getNumPlan());
