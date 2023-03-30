@@ -87,19 +87,21 @@ public class DeptoLogistica {
         // Agrego la tabla de la imagen y el texto al documento
         documento.add(tablaImagenTexto);
 
-            PdfPTable tabla = new PdfPTable(4);
+            PdfPTable tabla = new PdfPTable(5);
 
             // Agregar las celdas de la primera fila
             tabla.addCell("Nombre");
             tabla.addCell("Cedula");
             tabla.addCell("Plan");
+            tabla.addCell("adiciones");
             tabla.addCell("VALOR VENTA");
 
             //Agregar los datos que me pide el reporte
             for (int i = 0; i < listaClientes.size(); i++) {
                 tabla.addCell(listaClientes.get(i).getNombre());
                 tabla.addCell(listaClientes.get(i).getCedula());
-                tabla.addCell("plan");
+                tabla.addCell(listaClientes.get(i).getPlan().getNumPlan());
+                tabla.addCell(listaClientes.get(i).getPlan().getAdiciones());
                 tabla.addCell("$ "+listaClientes.get(i).getDinero());
 
             }

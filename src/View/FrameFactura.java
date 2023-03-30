@@ -33,7 +33,7 @@ public class FrameFactura extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         lblCed = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        lblNom = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         lblTel = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
@@ -98,14 +98,14 @@ public class FrameFactura extends javax.swing.JFrame {
         jLabel9.setText("Cédula                    :");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
-        lblNom.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        lblNom.setText("Atributo nombre");
-        jPanel1.add(lblNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 220, -1));
+        lblNombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lblNombre.setText("Atributo nombre");
+        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 220, -1));
 
         lblTel.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lblTel.setText("Atributo correo");
         jPanel1.add(lblTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 220, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 390, 15));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 280, 15));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel13.setText("Cliente                    :");
@@ -145,7 +145,7 @@ public class FrameFactura extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
         jLabel24.setText("Factura de venta : 1234 - 56789");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 250, 30));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 310, 30));
 
         jLabel25.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel25.setText("SUBTOTAL");
@@ -209,12 +209,13 @@ public class FrameFactura extends javax.swing.JFrame {
         c = deptolog.showListClien();
         for(int i=0; i < c.size(); i++){
             if(c.get(i).getCedula().equals(cedula))
-            lblNom.setText(c.get(i).getNombre());
             lblCed.setText(c.get(i).getCedula());
+            lblNombre.setText(c.get(i).getNombre());
             lblTel.setText(c.get(i).getCorreo());
             lblCantidad.setText(""+c.get(i).getContAdiciones());
             lblNomInst1.setText(c.get(i).getPlan().getNumPlan());
             lblSumaPrecios1.setText(""+c.get(i).getPlan().getPrecio());
+            lblSumaPrecios.setText(""+c.get(i).getValorAdiciones());
             lblTotal.setText(""+c.get(i).getDinero());
             
         }
@@ -246,9 +247,9 @@ public class FrameFactura extends javax.swing.JFrame {
     private javax.swing.JLabel lblCantidad;
     private javax.swing.JLabel lblCed;
     private javax.swing.JLabel lblIVA;
-    private javax.swing.JLabel lblNom;
     private javax.swing.JLabel lblNomInst;
     private javax.swing.JLabel lblNomInst1;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblSubTotal;
     private javax.swing.JLabel lblSumaPrecios;
     private javax.swing.JLabel lblSumaPrecios1;
