@@ -34,7 +34,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" pref="701" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,25 +57,12 @@
         <Component class="javax.swing.JLabel" name="Logo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenes/LOGO.png"/>
+              <Image iconType="3" name="/imagenes/Logo1.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="10" width="160" height="120"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JLabel" name="NombreEmpresa">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Kristen ITC" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="LOS MIPAI"/>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="130" width="-1" height="-1"/>
+              <AbsoluteConstraints x="70" y="10" width="160" height="160"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -98,7 +85,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="290" y="0" width="880" height="150"/>
+              <AbsoluteConstraints x="280" y="10" width="880" height="150"/>
             </Constraint>
           </Constraints>
 
@@ -370,7 +357,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="40" y="160" width="610" height="520"/>
+              <AbsoluteConstraints x="40" y="170" width="610" height="520"/>
             </Constraint>
           </Constraints>
 
@@ -487,7 +474,7 @@
                         <StringItem index="0" value="         === PLAN 4 ==="/>
                         <StringItem index="1" value="             (Individual)"/>
                         <StringItem index="2" value="- Ingreso a zona verde."/>
-                        <StringItem index="3" value="- Espectaculo de delfines."/>
+                        <StringItem index="3" value="- Espect&#xe1;culo de delfines."/>
                         <StringItem index="4" value="- Entrada a zona de pesca"/>
                         <StringItem index="5" value="(no incluye compras)"/>
                         <StringItem index="6" value=" "/>
@@ -571,7 +558,7 @@
                         <StringItem index="1" value="                 (Familiar)"/>
                         <StringItem index="2" value="- Ingreso de 4 personas."/>
                         <StringItem index="3" value="- Tour por el zoo."/>
-                        <StringItem index="4" value="- Espectaculo de delfines."/>
+                        <StringItem index="4" value="- Espect&#xe1;culo de delfines."/>
                         <StringItem index="5" value="- Ingreso a zona verde."/>
                         <StringItem index="6" value=" "/>
                         <StringItem index="7" value="Precio:"/>
@@ -723,7 +710,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="670" y="160" width="590" height="520"/>
+              <AbsoluteConstraints x="670" y="170" width="590" height="520"/>
             </Constraint>
           </Constraints>
 
@@ -827,7 +814,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Paseo en semi montana rusa        $8,000"/>
+                <Property name="text" type="java.lang.String" value="Paseo en semi monta&#xf1;a rusa        $8,000"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -840,7 +827,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Foto con Fiton (Piton del zoo)    $10,000"/>
+                <Property name="text" type="java.lang.String" value="Foto con Fit&#xf3;n (Pit&#xf3;n del zoo)    $10,000"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -884,7 +871,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Acesso a tobogan de agua                             $15,000"/>
+                <Property name="text" type="java.lang.String" value="Acesso a tobog&#xe1;n de agua                             $15,000"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -944,7 +931,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" Alquiler de Cana de pescar con carnadas    $35,000"/>
+                <Property name="text" type="java.lang.String" value=" Alquiler de Ca&#xf1;a de pescar con carnadas    $35,000"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1002,7 +989,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="comprar"/>
+                <Property name="text" type="java.lang.String" value="COMPRAR"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                     <BevelBorder/>
@@ -1026,7 +1013,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="ver factura"/>
+                <Property name="text" type="java.lang.String" value="VER  FACTURA"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                     <BevelBorder/>

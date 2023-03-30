@@ -4,7 +4,7 @@ public class Bloqueador implements Adicion {
 
     @Override
     public String nombre() {
-        String nombre = "Bloqueador para el sol";
+        String nombre = "Bloqueador para el sol\n";
         return nombre;
     }
 

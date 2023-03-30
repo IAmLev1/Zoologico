@@ -12,16 +12,18 @@ public class Client extends Persona {
     private float dinero;
     private Plan plan;
     private int contAdiciones;
+    private float valorAdiciones;
     
     public Client() {
     }
 
-    public Client(String nombre, String cedula, String correo, String sexo, int edad, float dinero, Plan plan, int contAdcicones) {
+    public Client(String nombre, String cedula, String correo, String sexo, int edad, float dinero, Plan plan, int contAdcicones, float valorAdiciones) {
         super(nombre, cedula, correo, sexo, edad);
         lvlFrecuencia = 0.0f;
         this.dinero=dinero;
         this.plan = plan;
         this.contAdiciones = contAdcicones;
+        this.valorAdiciones = valorAdiciones;
     }
 
     public float getLvlFrecuencia() {
@@ -54,6 +56,14 @@ public class Client extends Persona {
 
     public void setContAdiciones(int contAdiciones) {
         this.contAdiciones = contAdiciones;
+    }
+
+    public float getValorAdiciones() {
+        return valorAdiciones;
+    }
+
+    public void setValorAdiciones(float valorAdiciones) {
+        this.valorAdiciones = valorAdiciones;
     }
     
     
