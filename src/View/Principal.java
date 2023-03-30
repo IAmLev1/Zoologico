@@ -1,9 +1,6 @@
 package View;
 
 import Control.DeptoLogistica;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.log.Logger;
-import java.lang.System.Logger.Level;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -31,7 +28,6 @@ public class Principal extends javax.swing.JFrame {
         NombreEmpresa = new javax.swing.JLabel();
         jButtonIrVentas = new javax.swing.JButton();
         jButtonIrLogistica = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -69,14 +65,6 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonIrLogistica, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, -1, -1));
 
-        jButton1.setText("Pdf");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoNuevo.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 480));
 
@@ -99,20 +87,10 @@ public class Principal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonIrVentasActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            Depto.generarPdf();
-        } catch (DocumentException ex) {
-        }catch(NullPointerException e){
-            System.err.println("xd"+e.getMessage());
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Logo;
     private javax.swing.JLabel NombreEmpresa;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonIrLogistica;
     private javax.swing.JButton jButtonIrVentas;
     private javax.swing.JLabel jLabel1;

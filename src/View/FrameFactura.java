@@ -1,9 +1,20 @@
 package View;
+import Control.DeptoLogistica;
+import Model.Client;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class FrameFactura extends javax.swing.JFrame {
+    
+    private List<Client> c;
+    private DeptoLogistica deptolog;
+    private String cedula;
 
     public FrameFactura() {
         initComponents();
+        cedula = FrameVentas.dni;
+        c = new ArrayList<Client>();
     }
 
     @SuppressWarnings("unchecked")
@@ -193,6 +204,18 @@ public class FrameFactura extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnVolverActionPerformed
 
+    
+    void factura(){
+        c = deptolog.showListClien();
+        for(int i=0; i < c.size(); i++){
+            if(c.get(i).getCedula().equals(cedula))
+            lblNom.setText(c.get(i).getNombre());
+            lblCed.setText(c.get(i).getCedula());
+            lblTel.setText(c.get(i).getCorreo());
+            
+        }
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel13;

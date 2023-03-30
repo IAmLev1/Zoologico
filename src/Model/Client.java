@@ -11,15 +11,17 @@ public class Client extends Persona {
     // se creara el metodo de este campo cuando ea ingresen a arraylist
     private float dinero;
     private Plan plan;
+    private int contAdiciones;
     
     public Client() {
     }
 
-    public Client(String nombre, String cedula, String correo, String sexo, int edad, float dinero, Plan plan) {
+    public Client(String nombre, String cedula, String correo, String sexo, int edad, float dinero, Plan plan, int contAdcicones) {
         super(nombre, cedula, correo, sexo, edad);
         lvlFrecuencia = 0.0f;
         this.dinero=dinero;
         this.plan = plan;
+        this.contAdiciones = contAdcicones;
     }
 
     public float getLvlFrecuencia() {
@@ -45,6 +47,16 @@ public class Client extends Persona {
     public void setPlan(Plan plan) {
         this.plan = plan;
     }
+
+    public int getContAdiciones() {
+        return contAdiciones;
+    }
+
+    public void setContAdiciones(int contAdiciones) {
+        this.contAdiciones = contAdiciones;
+    }
+    
+    
 
     @Override
     public String toString() {

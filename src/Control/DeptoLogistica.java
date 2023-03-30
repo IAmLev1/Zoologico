@@ -44,6 +44,10 @@ public class DeptoLogistica {
     public List<Animal> showListAnim () {
         return listaAnimales;
     }
+    
+        public List<Client> showListClien () {
+        return listaClientes;
+    }
 
 
     public void generarPdf() throws DocumentException {
