@@ -181,8 +181,8 @@ public class FrameFactura extends javax.swing.JFrame {
         lblSumaPrecios1.setText("(precio)");
         jPanel1.add(lblSumaPrecios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoFactura.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 60));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoFactura1.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

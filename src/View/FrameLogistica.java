@@ -39,7 +39,6 @@ public class FrameLogistica extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
-        NombreEmpresa = new javax.swing.JLabel();
         jButtonVolver = new javax.swing.JButton();
         jButtonVerListaAnimales = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -86,12 +85,8 @@ public class FrameLogistica extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.png"))); // NOI18N
-        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 170, 120));
-
-        NombreEmpresa.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
-        NombreEmpresa.setText("LOS MIPAI");
-        jPanel1.add(NombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo1.png"))); // NOI18N
+        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 160, 160));
 
         jButtonVolver.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         jButtonVolver.setText("Volver");
@@ -101,7 +96,7 @@ public class FrameLogistica extends javax.swing.JFrame {
                 jButtonVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 110, 40));
+        jPanel1.add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 110, 40));
 
         jButtonVerListaAnimales.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jButtonVerListaAnimales.setText("Ver lista de animales");
@@ -111,17 +106,17 @@ public class FrameLogistica extends javax.swing.JFrame {
                 jButtonVerListaAnimalesActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonVerListaAnimales, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
+        jPanel1.add(jButtonVerListaAnimales, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 40));
 
         jButton1.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-        jButton1.setText("Generar PDF");
+        jButton1.setText("Generar PDF de personas");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 150, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 210, 40));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true), "Ingresar Animal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 18))); // NOI18N
         jPanel2.setOpaque(false);
@@ -376,7 +371,7 @@ public class FrameLogistica extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            Depto.generarPdf();
+            Depto.generarPdfPersona();
         }catch (DocumentException ex) {
         }catch(NullPointerException e){
             System.err.println("xd"+e.getMessage());
@@ -386,7 +381,6 @@ public class FrameLogistica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Logo;
-    private javax.swing.JLabel NombreEmpresa;
     private javax.swing.JButton btnIngresoAnimal;
     private javax.swing.JButton btnRetiroAnimal1;
     private javax.swing.JComboBox<String> cbNivelPeli;

@@ -48,7 +48,6 @@ public class FrameVentas extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
-        NombreEmpresa = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -110,12 +109,8 @@ public class FrameVentas extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(204, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.png"))); // NOI18N
-        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 160, 120));
-
-        NombreEmpresa.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
-        NombreEmpresa.setText("LOS MIPAI");
-        jPanel1.add(NombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo1.png"))); // NOI18N
+        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 160, 160));
 
         jPanel2.setBackground(new java.awt.Color(153, 255, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true), "REGISTRO", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 12))); // NOI18N
@@ -197,7 +192,7 @@ public class FrameVentas extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer", "Otro", " " }));
         jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 110, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 880, 150));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 880, 150));
 
         jPanel3.setBackground(new java.awt.Color(153, 255, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true), "COMPRA DE BOLETAS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 14))); // NOI18N
@@ -319,7 +314,7 @@ public class FrameVentas extends javax.swing.JFrame {
         });
         jPanel3.add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 90, 30));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 610, 520));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 610, 520));
 
         jPanel4.setBackground(new java.awt.Color(153, 255, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Adiciones", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 14))); // NOI18N
@@ -419,7 +414,7 @@ public class FrameVentas extends javax.swing.JFrame {
 
         agregarCompra.setBackground(new java.awt.Color(153, 255, 153));
         agregarCompra.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-        agregarCompra.setText("comprar");
+        agregarCompra.setText("COMPRAR");
         agregarCompra.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         agregarCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -430,7 +425,7 @@ public class FrameVentas extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(153, 255, 153));
         jButton1.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-        jButton1.setText("ver factura");
+        jButton1.setText("VER  FACTURA");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -439,7 +434,7 @@ public class FrameVentas extends javax.swing.JFrame {
         });
         jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 180, 50));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, 590, 520));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 170, 590, 520));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo1.jpg"))); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -50, 1280, 800));
@@ -454,7 +449,7 @@ public class FrameVentas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         pack();
@@ -752,7 +747,6 @@ public class FrameVentas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Logo;
-    private javax.swing.JLabel NombreEmpresa;
     private javax.swing.JButton agregarCompra;
     private javax.swing.JButton btnIngresoCliente;
     private javax.swing.JButton btnNuevoCliente;

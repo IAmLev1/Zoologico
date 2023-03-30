@@ -50,11 +50,11 @@ public class DeptoLogistica {
     }
 
 
-    public void generarPdf() throws DocumentException {
+    public void generarPdfPersona() throws DocumentException {
         Document documento = new Document();
         try {
             // Crear una instancia de PdfWriter y asociarla con el documento
-            PdfWriter.getInstance(documento, new FileOutputStream("src/Pdf/tablaZ00.pdf"));
+            PdfWriter.getInstance(documento, new FileOutputStream("src/Pdf/tablaPersonas.pdf"));
 
             // Abrir el documento
             documento.open();
@@ -64,9 +64,9 @@ public class DeptoLogistica {
         tablaImagenTexto.setWidthPercentage(100);
 
         // Agrego la celda de la imagen
-        String rutaImagen = "src/imagenes/LOGO.png";
+        String rutaImagen = "src/imagenes/Logo1.png";
         Image foto = Image.getInstance(new File(rutaImagen).getAbsolutePath());
-        foto.scaleToFit(250, 250);
+        foto.scaleToFit(160, 160);
         PdfPCell celdaImagen = new PdfPCell(foto);
         celdaImagen.setBorder(Rectangle.NO_BORDER);
         celdaImagen.setVerticalAlignment(0);
@@ -113,5 +113,68 @@ public class DeptoLogistica {
             documento.close();
         }
     }
+    
+//    public void generarPdfAnimale() throws DocumentException {
+//        Document documento = new Document();
+//        try {
+//            // Crear una instancia de PdfWriter y asociarla con el documento
+//            PdfWriter.getInstance(documento, new FileOutputStream("src/Pdf/tablaAnimales.pdf"));
+//
+//            // Abrir el documento
+//            documento.open();
+//            
+//                    // Creo la tabla de la imagen y el texto
+//        PdfPTable tablaImagenTexto = new PdfPTable(2);
+//        tablaImagenTexto.setWidthPercentage(100);
+//
+//        // Agrego la celda de la imagen
+//        String rutaImagen = "src/imagenes/Logo1.png";
+//        Image foto = Image.getInstance(new File(rutaImagen).getAbsolutePath());
+//        foto.scaleToFit(160, 160);
+//        PdfPCell celdaImagen = new PdfPCell(foto);
+//        celdaImagen.setBorder(Rectangle.NO_BORDER);
+//        celdaImagen.setVerticalAlignment(0);
+//        celdaImagen.setHorizontalAlignment(0);
+//        tablaImagenTexto.addCell(celdaImagen);
+//
+//        // Agrego la celda del texto
+//        Paragraph texto = new Paragraph("Zoológico MI PAI\nChina japon\ntel: +57 9999999999");
+//        PdfPCell celdaTexto = new PdfPCell(texto);
+//        celdaTexto.setBorder(Rectangle.NO_BORDER);
+//        celdaTexto.setVerticalAlignment(0);
+//        celdaTexto.setHorizontalAlignment(20);
+//        tablaImagenTexto.addCell(celdaTexto);
+//
+//        // Agrego espacio vertical entre la tabla de la imagen y el texto
+//        documento.add(new Paragraph(20, " "));
+//
+//        // Agrego la tabla de la imagen y el texto al documento
+//        documento.add(tablaImagenTexto);
+//
+//            PdfPTable tabla = new PdfPTable(4);
+//
+//            // Agregar las celdas de la primera fila
+//            tabla.addCell("Código");
+//            tabla.addCell("Nombre");
+//            tabla.addCell("Tipo de animal");
+//            tabla.addCell("Nivel de peligrosidad");
+//            tabla.addCell("Raza");
+//
+//            //Agregar los datos que me pide el reporte
+//            for (int i = 0; i < listaAnimales.size(); i++) {
+//                tabla.addCell(""+listaAnimales.get(i).getCodigo());
+//                tabla.addCell(listaAnimales.get(i).getNombre());
+//                if (listaAnimales)
+//            }
+//
+//            // Agregar la tabla al documento
+//            documento.add(tabla);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            // Cerrar el documento
+//            documento.close();
+//        }
+//    }
 
 }
