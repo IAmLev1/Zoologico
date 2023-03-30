@@ -5,7 +5,6 @@
 package View;
 
 import Control.DeptoLogistica;
-import Model.Adicion;
 import java.util.ArrayList;
 import java.util.List;
 import Model.Client;
@@ -531,7 +530,7 @@ public class FrameVentas extends javax.swing.JFrame {
         float valorTotal = 0.0f;
         Plan plan = new Plan();
         Client client, clientToFrameLog;
-        Adicion adicion;
+         int contAdiciones=0;
         
         if(rbPlan1.isSelected()) {
             plan = new Plan (25000f, "Plan 1");
@@ -570,78 +569,65 @@ public class FrameVentas extends javax.swing.JFrame {
         }
         
         if(cbAdicionBasica1.isSelected()) {
-            adicion = new Adicion("Gorra con logo del zoo", 10000f);
-            plan.addAdiciones(adicion);
             valorTotal += 10000f;
+            contAdiciones++;
         }
         if(cbAdicionBasica2.isSelected()) {
-            adicion = new Adicion("Bloqueador solar", 7000f);
-            plan.addAdiciones(adicion);
             valorTotal += 7000f;
+            contAdiciones++;
         }
         if(cbAdicionBasica3.isSelected()) {
-            adicion = new Adicion("Repelente para mosquitos", 15000f);
-            plan.addAdiciones(adicion);
             valorTotal += 15000f;
+            contAdiciones++;
         }
         if(cbAdicionEstandar1.isSelected()) {
-            adicion = new Adicion("Bote de comida para animales", 5000f);
-            plan.addAdiciones(adicion);
             valorTotal += 5000f;
+            contAdiciones++;
         }
         if(cbAdicionEstandar2.isSelected()) {
-            adicion = new Adicion("Paseo en semi montaña rusa", 8000f);
-            plan.addAdiciones(adicion);
             valorTotal += 8000f;
+            contAdiciones++;
         }
         if(cbAdicionEstandar3.isSelected()) {
-            adicion = new Adicion("Foto con Fiton", 10000f);
-            plan.addAdiciones(adicion);
             valorTotal += 10000f;
+            contAdiciones++;
         }
         if(cbAdicionZV1.isSelected()) {
-            adicion = new Adicion("Fogata con malvaviscos", 8000f);
-            plan.addAdiciones(adicion);
             valorTotal += 8000f;
+            contAdiciones++;
         }
         if(cbAdicionZV2.isSelected()) {
-            adicion = new Adicion("Tobogán de agua", 15000f);
-            plan.addAdiciones(adicion);
             valorTotal += 15000f;
+            contAdiciones++;
         }
         if(cbAdicionZV3.isSelected()) {
-            adicion = new Adicion("Xona de capybaras", 8000f);
-            plan.addAdiciones(adicion);
             valorTotal += 8000f;
+            contAdiciones++;
         }
         if(cbAdicionZV4.isSelected()) {
-            adicion = new Adicion("Camisa 'Amor por los carpinchos'", 18000f);
-            plan.addAdiciones(adicion);
+            contAdiciones++;
         }
         if(cbAdicionZP1.isSelected()) {
-            adicion = new Adicion("Caña de pescar con carnadas", 35000f);
-            plan.addAdiciones(adicion);
             valorTotal += 35000f;
+            contAdiciones++;
         }
         if(cbAdicionZP2.isSelected()) {
-            adicion = new Adicion("Gorro de pesca", 13000f);
-            plan.addAdiciones(adicion);
             valorTotal += 13000f;
+            contAdiciones++;
         }
         if(cbAdicionZP3.isSelected()) {
-            adicion = new Adicion("Paseo en bote por el lago de pesca", 10000f);
-            plan.addAdiciones(adicion);
             valorTotal += 10000f;
+            contAdiciones++;
         }
         if(cbAdicionZP4.isSelected()) {
-            adicion = new Adicion("Visita a la isla Kong", 17000f);
-            plan.addAdiciones(adicion);
             valorTotal += 17000f;
+            contAdiciones++;
         }
         
         for (int i = 0; i < clientes.size(); i++) {
             if(clientes.get(i).getCedula().equals(txtCedula.getText())) {
                 clientes.get(i).setDinero(valorTotal);
+                clientes.get(i).setContAdiciones(contAdiciones);
                 clientes.get(i).setLvlFrecuencia(clientes.get(i).getLvlFrecuencia()+0.2f);
                 jLabel11.setText(Float.toString(clientes.get(i).getLvlFrecuencia()));
                 clientes.get(i).setPlan(plan);

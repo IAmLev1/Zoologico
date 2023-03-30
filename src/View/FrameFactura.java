@@ -13,8 +13,9 @@ public class FrameFactura extends javax.swing.JFrame {
 
     public FrameFactura() {
         initComponents();
+        deptolog = new DeptoLogistica();
         cedula = FrameVentas.dni;
-        c = new ArrayList<Client>();
+        factura();
     }
 
     @SuppressWarnings("unchecked")
@@ -51,7 +52,6 @@ public class FrameFactura extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         btnVolver = new javax.swing.JButton();
-        lblCantidad1 = new javax.swing.JLabel();
         lblNomInst1 = new javax.swing.JLabel();
         lblSumaPrecios1 = new javax.swing.JLabel();
 
@@ -172,10 +172,6 @@ public class FrameFactura extends javax.swing.JFrame {
         });
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, -1, -1));
 
-        lblCantidad1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        lblCantidad1.setText("(cantidad)");
-        jPanel1.add(lblCantidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
-
         lblNomInst1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lblNomInst1.setText("Boletos");
         jPanel1.add(lblNomInst1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
@@ -212,6 +208,10 @@ public class FrameFactura extends javax.swing.JFrame {
             lblNom.setText(c.get(i).getNombre());
             lblCed.setText(c.get(i).getCedula());
             lblTel.setText(c.get(i).getCorreo());
+            lblCantidad.setText(""+c.get(i).getContAdiciones());
+            lblNomInst1.setText(c.get(i).getPlan().getNumPlan());
+            lblSumaPrecios1.setText(""+c.get(i).getPlan().getPrecio());
+            lblTotal.setText(""+c.get(i).getDinero());
             
         }
         
@@ -239,7 +239,6 @@ public class FrameFactura extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel lblCantidad;
-    private javax.swing.JLabel lblCantidad1;
     private javax.swing.JLabel lblCed;
     private javax.swing.JLabel lblIVA;
     private javax.swing.JLabel lblNom;
