@@ -5,7 +5,6 @@
 package View;
 
 import Control.DeptoLogistica;
-import Model.Adicion;
 import java.util.ArrayList;
 import java.util.List;
 import Model.Client;
@@ -522,7 +521,6 @@ public class FrameVentas extends javax.swing.JFrame {
         float valorTotal = 0.0f;
         Plan plan = new Plan();
         Client client, clientToFrameLog;
-        Adicion adicion;
         
         if(rbPlan1.isSelected()) {
             plan = new Plan (25000f, "Plan 1");
@@ -561,72 +559,44 @@ public class FrameVentas extends javax.swing.JFrame {
         }
         
         if(cbAdicionBasica1.isSelected()) {
-            adicion = new Adicion("Gorra con logo del zoo", 10000f);
-            plan.addAdiciones(adicion);
             valorTotal += 10000f;
         }
         if(cbAdicionBasica2.isSelected()) {
-            adicion = new Adicion("Bloqueador solar", 7000f);
-            plan.addAdiciones(adicion);
             valorTotal += 7000f;
         }
         if(cbAdicionBasica3.isSelected()) {
-            adicion = new Adicion("Repelente para mosquitos", 15000f);
-            plan.addAdiciones(adicion);
             valorTotal += 15000f;
         }
         if(cbAdicionEstandar1.isSelected()) {
-            adicion = new Adicion("Bote de comida para animales", 5000f);
-            plan.addAdiciones(adicion);
             valorTotal += 5000f;
         }
         if(cbAdicionEstandar2.isSelected()) {
-            adicion = new Adicion("Paseo en semi montaña rusa", 8000f);
-            plan.addAdiciones(adicion);
             valorTotal += 8000f;
         }
         if(cbAdicionEstandar3.isSelected()) {
-            adicion = new Adicion("Foto con Fiton", 10000f);
-            plan.addAdiciones(adicion);
             valorTotal += 10000f;
         }
         if(cbAdicionZV1.isSelected()) {
-            adicion = new Adicion("Fogata con malvaviscos", 8000f);
-            plan.addAdiciones(adicion);
             valorTotal += 8000f;
         }
         if(cbAdicionZV2.isSelected()) {
-            adicion = new Adicion("Tobogán de agua", 15000f);
-            plan.addAdiciones(adicion);
             valorTotal += 15000f;
         }
         if(cbAdicionZV3.isSelected()) {
-            adicion = new Adicion("Xona de capybaras", 8000f);
-            plan.addAdiciones(adicion);
             valorTotal += 8000f;
         }
         if(cbAdicionZV4.isSelected()) {
-            adicion = new Adicion("Camisa 'Amor por los carpinchos'", 18000f);
-            plan.addAdiciones(adicion);
         }
         if(cbAdicionZP1.isSelected()) {
-            adicion = new Adicion("Caña de pescar con carnadas", 35000f);
-            plan.addAdiciones(adicion);
             valorTotal += 35000f;
         }
         if(cbAdicionZP2.isSelected()) {
-            adicion = new Adicion("Gorro de pesca", 13000f);
-            plan.addAdiciones(adicion);
             valorTotal += 13000f;
         }
         if(cbAdicionZP3.isSelected()) {
-            adicion = new Adicion("Paseo en bote por el lago de pesca", 10000f);
-            plan.addAdiciones(adicion);
             valorTotal += 10000f;
         }
         if(cbAdicionZP4.isSelected()) {
-            adicion = new Adicion("Visita a la isla Kong", 17000f);
-            plan.addAdiciones(adicion);
             valorTotal += 17000f;
         }
         
