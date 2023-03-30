@@ -43,6 +43,7 @@ public class FrameFactura extends javax.swing.JFrame {
         lblCantidad1 = new javax.swing.JLabel();
         lblNomInst1 = new javax.swing.JLabel();
         lblSumaPrecios1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,7 +134,7 @@ public class FrameFactura extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
         jLabel24.setText("Factura de venta : 1234 - 56789");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 300, 30));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 250, 30));
 
         jLabel25.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel25.setText("SUBTOTAL");
@@ -173,6 +174,9 @@ public class FrameFactura extends javax.swing.JFrame {
         lblSumaPrecios1.setText("(precio)");
         jPanel1.add(lblSumaPrecios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoFactura.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 60));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,6 +199,7 @@ public class FrameFactura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

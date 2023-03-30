@@ -25,11 +25,11 @@ public class Principal extends javax.swing.JFrame {
         Logo = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         NombreEmpresa = new javax.swing.JLabel();
         jButtonIrVentas = new javax.swing.JButton();
         jButtonIrLogistica = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -43,6 +43,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CartelVentas.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 280, 280));
 
+        jLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 36)); // NOI18N
+        jLabel2.setText("Zoológico Los Mipai");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
+
         NombreEmpresa.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         NombreEmpresa.setText("LOS MIPAI");
         getContentPane().add(NombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
@@ -54,7 +58,7 @@ public class Principal extends javax.swing.JFrame {
                 jButtonIrVentasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonIrVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, -1, -1));
+        getContentPane().add(jButtonIrVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 140, 40));
 
         jButtonIrLogistica.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jButtonIrLogistica.setText("Ir a Logistica");
@@ -63,14 +67,10 @@ public class Principal extends javax.swing.JFrame {
                 jButtonIrLogisticaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonIrLogistica, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, -1, -1));
+        getContentPane().add(jButtonIrLogistica, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 390, 140, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoNuevo.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 480));
-
-        jLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 36)); // NOI18N
-        jLabel2.setText("Zoológico Los Mipai");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
