@@ -3,7 +3,7 @@ package Model.Adiciones;
 public class FotoFiton implements Adicion{
     @Override
     public String nombre() {
-        String nombre = "Foto con Fiton (piton del zoo)";
+        String nombre = "Foto con Fiton (piton del zoo)\n";
         return nombre;
     }
 

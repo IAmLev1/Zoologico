@@ -3,7 +3,7 @@ package Model.Adiciones;
 public class CañaPescarCarnadas implements Adicion {
     @Override
     public String nombre() {
-        String nombre = "Alquiler de caña de pescar con carnadas";
+        String nombre = "Alquiler de caña de pescar con carnadas\n";
         return nombre;
     }
 

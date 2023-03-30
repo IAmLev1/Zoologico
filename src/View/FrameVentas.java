@@ -9,16 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 import Model.Client;
 import Model.Plan;
+import Model.Adiciones.*;
 
 /**
  *
  * @author Levi.ing
  */
 public class FrameVentas extends javax.swing.JFrame {
-    
-     private List<Client> clientes;
-     private DeptoLogistica deptoLog = new DeptoLogistica();
-     public static String dni;
+
+    private List<Client> clientes;
+    private DeptoLogistica deptoLog = new DeptoLogistica();
+    public static String dni;
+    private Adicion adicion;
 
     /**
      * Creates new form Frame2
@@ -468,28 +470,29 @@ public class FrameVentas extends javax.swing.JFrame {
         txtNombre.setText("");
         btnNuevoCliente.setEnabled(false);
         desbloqueoTxt();
-        
-        
+
+
     }//GEN-LAST:event_btnNuevoClienteActionPerformed
-    
+
     private void btnIngresoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoClienteActionPerformed
         // TODO add your handling code here:
         btnNuevoCliente.setEnabled(true);
-        
+
         String nombre, cedula, correo, sexo;
-        float pago;
+        float pago, valorAdiciones;
         int edad, contAdiciones;
         Plan plan = null;
-        
+
         nombre = txtNombre.getText();
         cedula = txtCedula.getText();
         correo = txtCorreo.getText();
         edad = Integer.parseInt(txtEdad.getText());
         pago = 0;
-        sexo = (String)jComboBox1.getSelectedItem();
-        contAdiciones=0;
-        
-        clientes.add(crearCliente(nombre, cedula, correo, edad, sexo, pago, plan, contAdiciones));
+        sexo = (String) jComboBox1.getSelectedItem();
+        contAdiciones = 0;
+        valorAdiciones = 0.0f;
+
+        clientes.add(crearCliente(nombre, cedula, correo, edad, sexo, pago, plan, contAdiciones, valorAdiciones));
         unlockPlans();
     }//GEN-LAST:event_btnIngresoClienteActionPerformed
 
@@ -530,113 +533,136 @@ public class FrameVentas extends javax.swing.JFrame {
         float valorTotal = 0.0f;
         Plan plan = new Plan();
         Client client, clientToFrameLog;
-         int contAdiciones=0;
+        int contAdiciones = 0;
+        String gorra="", bloqueador="", repelente="", comida="",paseo="",foto="" ,fogata="", tobogan="", capyZone="", camisa="",pescar="",gorro="",paseoBote="",isla="";
+        float gorraP=0.0f, bloqueadorP=0.0f, repelenteP=0.0f, comidaP=0.0f,paseoP=0.0f,fotoP=0.0f ,fogataP=0.0f, toboganP=0.0f, capyZoneP=0.0f, camisaP=0.0f,pescarP=0.0f,gorroP=0.0f,paseoBoteP=0.0f,islaP=0.0f;
+        String adicion="";
+        float sumaAdiciones=0.0f, valorPlan=0.0f;
+                if (cbAdicionBasica1.isSelected()) {
+            gorraP = new GorraZoo().precio();
+            gorra = new GorraZoo().nombre();
+            contAdiciones++;
+            
+        }
+        if (cbAdicionBasica2.isSelected()) {
+            bloqueador = new Bloqueador().nombre();
+            bloqueadorP = new Bloqueador().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionBasica3.isSelected()) {
+            repelente = new Repelente().nombre();
+            repelenteP = new Repelente().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionEstandar1.isSelected()) {
+            comida = new BoteComida().nombre();
+            comidaP = new BoteComida().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionEstandar2.isSelected()) {
+            paseo = new PaseoMontañaRusa().nombre();
+            paseoP = new PaseoMontañaRusa().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionEstandar3.isSelected()) {
+            foto = new FotoFiton().nombre();
+            fotoP = new FotoFiton().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionZV1.isSelected()) {
+            fogata = new Fogata().nombre();
+            fogataP = new Fogata().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionZV2.isSelected()) {
+            tobogan= new Tobogan().nombre();
+            toboganP = new Tobogan().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionZV3.isSelected()) {
+            capyZone = new ZonaCapybaras().nombre();
+            capyZoneP = new ZonaCapybaras().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionZV4.isSelected()) {
+            camisa = new CamisaCarpinchos().nombre();
+            camisaP = new CamisaCarpinchos().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionZP1.isSelected()) {
+            pescar = new CañaPescarCarnadas().nombre();
+            pescarP = new CañaPescarCarnadas().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionZP2.isSelected()) {
+            gorro = new GorroPesca().nombre();
+            gorroP = new GorroPesca().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionZP3.isSelected()) {
+            paseoBote = new PaseoBote().nombre();
+            paseoBoteP = new PaseoBote().precio();
+            contAdiciones++;
+        }
+        if (cbAdicionZP4.isSelected()) {
+            isla = new VisitaIslaKong().nombre();
+            islaP = new VisitaIslaKong().precio();
+            contAdiciones++;
+        }
         
-        if(rbPlan1.isSelected()) {
-            plan = new Plan (25000f, "Plan 1");
+        adicion = gorra+bloqueador+ repelente+comida+paseo+foto+fogata+tobogan+capyZone+camisa+pescar+gorro+paseoBote+isla;
+        sumaAdiciones = gorraP+bloqueadorP+repelenteP+comidaP+paseoP+fotoP+fogataP+toboganP+capyZoneP+ camisaP+pescarP+gorroP+paseoBoteP+islaP;
+        
+        if (rbPlan1.isSelected()) {
+            plan = new Plan(25000f, "Plan 1", adicion);
             plan.addBeneficios("Tour por zoo");
-            plan.addBeneficios("Ingreso a zona verde");   
-            valorTotal += 25000f;
-        }
-        else if (rbPlan2.isSelected()) {
-            plan = new Plan (55000f, "Plan 2");
+            plan.addBeneficios("Ingreso a zona verde");
+             valorPlan = 25000f;
+        } else if (rbPlan2.isSelected()) {
+            plan = new Plan(55000f, "Plan 2", adicion);
             plan.addBeneficios("Tour por zoo");
-            plan.addBeneficios("Ingreso a zona verde");  
+            plan.addBeneficios("Ingreso a zona verde");
             plan.addBeneficios("Ingreso a zona de cisnes");
-            valorTotal += 55000f;
-        }
-        else if (rbPlan3.isSelected()) {
-            plan = new Plan (63000f, "Plan 3");
+             valorPlan = 55000f;
+        } else if (rbPlan3.isSelected()) {
+            plan = new Plan(63000f, "Plan 3", adicion);
             plan.addBeneficios("Safari");
             plan.addBeneficios("Ingreso a zona verde");
             plan.addBeneficios("Paseo en caballos");
-            valorTotal += 63000f;
-        }
-        else if (rbPlan4.isSelected()) {
-            plan = new Plan (50000f, "Plan 4");
-            plan.addBeneficios("Ingreso a zona verde");  
+             valorPlan = 63000f;
+        } else if (rbPlan4.isSelected()) {
+            plan = new Plan(50000f, "Plan 4",adicion);
+            plan.addBeneficios("Ingreso a zona verde");
             plan.addBeneficios("Espectáculo de delfines");
             plan.addBeneficios("Entrada a zona de pesca");
-            valorTotal += 50000f;
-        }
-        else if (rbPlan5.isSelected()) {
-            plan = new Plan (78000f, "Plan 5");
+             valorPlan= 50000f;
+        } else if (rbPlan5.isSelected()) {
+            plan = new Plan(78000f, "Plan 5", adicion);
             plan.addBeneficios("Ingreso de 4 personas");
-            plan.addBeneficios("Tour por el zoo");  
+            plan.addBeneficios("Tour por el zoo");
             plan.addBeneficios("Espectáculo de delfines");
             plan.addBeneficios("Ingreso a zona verde");
-            valorTotal += 78000f;
+             valorPlan = 78000f;
         }
+
+        valorTotal = valorPlan + sumaAdiciones;
         
-        if(cbAdicionBasica1.isSelected()) {
-            valorTotal += 10000f;
-            contAdiciones++;
-        }
-        if(cbAdicionBasica2.isSelected()) {
-            valorTotal += 7000f;
-            contAdiciones++;
-        }
-        if(cbAdicionBasica3.isSelected()) {
-            valorTotal += 15000f;
-            contAdiciones++;
-        }
-        if(cbAdicionEstandar1.isSelected()) {
-            valorTotal += 5000f;
-            contAdiciones++;
-        }
-        if(cbAdicionEstandar2.isSelected()) {
-            valorTotal += 8000f;
-            contAdiciones++;
-        }
-        if(cbAdicionEstandar3.isSelected()) {
-            valorTotal += 10000f;
-            contAdiciones++;
-        }
-        if(cbAdicionZV1.isSelected()) {
-            valorTotal += 8000f;
-            contAdiciones++;
-        }
-        if(cbAdicionZV2.isSelected()) {
-            valorTotal += 15000f;
-            contAdiciones++;
-        }
-        if(cbAdicionZV3.isSelected()) {
-            valorTotal += 8000f;
-            contAdiciones++;
-        }
-        if(cbAdicionZV4.isSelected()) {
-            contAdiciones++;
-        }
-        if(cbAdicionZP1.isSelected()) {
-            valorTotal += 35000f;
-            contAdiciones++;
-        }
-        if(cbAdicionZP2.isSelected()) {
-            valorTotal += 13000f;
-            contAdiciones++;
-        }
-        if(cbAdicionZP3.isSelected()) {
-            valorTotal += 10000f;
-            contAdiciones++;
-        }
-        if(cbAdicionZP4.isSelected()) {
-            valorTotal += 17000f;
-            contAdiciones++;
-        }
         
+
         for (int i = 0; i < clientes.size(); i++) {
-            if(clientes.get(i).getCedula().equals(txtCedula.getText())) {
+            if (clientes.get(i).getCedula().equals(txtCedula.getText())) {
                 clientes.get(i).setDinero(valorTotal);
+                clientes.get(i).setValorAdiciones(sumaAdiciones);
                 clientes.get(i).setContAdiciones(contAdiciones);
-                clientes.get(i).setLvlFrecuencia(clientes.get(i).getLvlFrecuencia()+0.2f);
-                jLabel11.setText(Float.toString(clientes.get(i).getLvlFrecuencia()));
+                clientes.get(i).setLvlFrecuencia(clientes.get(i).getLvlFrecuencia() + 0.2f);
+                jLabel11.setText(""+clientes.get(i).getLvlFrecuencia());
                 clientes.get(i).setPlan(plan);
                 clientToFrameLog = clientes.get(i);
                 deptoLog.ingresar(clientToFrameLog);
             }
         }
-        
-        
+
+
     }//GEN-LAST:event_agregarCompraActionPerformed
 
     private void cbAdicionBasica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAdicionBasica1ActionPerformed
@@ -652,101 +678,101 @@ public class FrameVentas extends javax.swing.JFrame {
     private void rbPlan4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbPlan4ActionPerformed
         unlockBasic();
         unlockEstandar();
-        unlockZV(); 
+        unlockZV();
         unlockZP();
     }//GEN-LAST:event_rbPlan4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new FrameFactura().setVisible(true);
         dni = txtCedula.getText();
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
-    
-    void bloqueoTxt(){
+
+    void bloqueoTxt() {
         txtCedula.setEditable(false);
         txtCorreo.setEditable(false);
         txtEdad.setEditable(false);
         txtNombre.setEditable(false);
     }
-    
-    void desbloqueoTxt(){
+
+    void desbloqueoTxt() {
         txtCedula.setEditable(true);
         txtCorreo.setEditable(true);
         txtEdad.setEditable(true);
         txtNombre.setEditable(true);
     }
-    
-    void blockPlans(){
+
+    void blockPlans() {
         rbPlan1.setEnabled(false);
         rbPlan2.setEnabled(false);
         rbPlan3.setEnabled(false);
         rbPlan4.setEnabled(false);
         rbPlan5.setEnabled(false);
     }
-    
-    void unlockPlans(){
+
+    void unlockPlans() {
         rbPlan1.setEnabled(true);
         rbPlan2.setEnabled(true);
         rbPlan3.setEnabled(true);
         rbPlan4.setEnabled(true);
         rbPlan5.setEnabled(true);
     }
-    
-    public Client crearCliente(String nombre, String cedula, String correo, int edad, String sexo, float pago, Plan plan, int contAdiciones){
-        Client cliente = new Client(nombre, cedula, correo, sexo, edad, pago, plan, contAdiciones);
+
+    public Client crearCliente(String nombre, String cedula, String correo, int edad, String sexo, float pago, Plan plan, int contAdiciones, float valorAdiciones) {
+        Client cliente = new Client(nombre, cedula, correo, sexo, edad, pago, plan, contAdiciones, valorAdiciones);
         return cliente;
     }
-    
-    void blockCheckLBasica(){
+
+    void blockCheckLBasica() {
         cbAdicionBasica1.setEnabled(false);
         cbAdicionBasica2.setEnabled(false);
         cbAdicionBasica3.setEnabled(false);
     }
-    
-    void unlockBasic(){
+
+    void unlockBasic() {
         cbAdicionBasica1.setEnabled(true);
         cbAdicionBasica2.setEnabled(true);
         cbAdicionBasica3.setEnabled(true);
     }
-    
-    void blockCheckLEstaandar(){
+
+    void blockCheckLEstaandar() {
         cbAdicionEstandar1.setEnabled(false);
         cbAdicionEstandar2.setEnabled(false);
         cbAdicionEstandar3.setEnabled(false);
     }
-    
-    void unlockEstandar(){
+
+    void unlockEstandar() {
         cbAdicionEstandar1.setEnabled(true);
         cbAdicionEstandar2.setEnabled(true);
         cbAdicionEstandar3.setEnabled(true);
     }
-    
-    void blockCheckLZV(){
+
+    void blockCheckLZV() {
         cbAdicionZV1.setEnabled(false);
         cbAdicionZV2.setEnabled(false);
         cbAdicionZV3.setEnabled(false);
         cbAdicionZV4.setEnabled(false);
     }
-    
-    void unlockZV(){
+
+    void unlockZV() {
         cbAdicionZV1.setEnabled(true);
         cbAdicionZV2.setEnabled(true);
         cbAdicionZV3.setEnabled(true);
         cbAdicionZV4.setEnabled(true);
     }
-    
-    void blockCheckLZP(){
+
+    void blockCheckLZP() {
         cbAdicionZP1.setEnabled(false);
         cbAdicionZP2.setEnabled(false);
         cbAdicionZP3.setEnabled(false);
         cbAdicionZP4.setEnabled(false);
     }
-    
-    void unlockZP(){
-       cbAdicionZP1.setEnabled(true);
+
+    void unlockZP() {
+        cbAdicionZP1.setEnabled(true);
         cbAdicionZP2.setEnabled(true);
         cbAdicionZP3.setEnabled(true);
-        cbAdicionZP4.setEnabled(true); 
+        cbAdicionZP4.setEnabled(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
