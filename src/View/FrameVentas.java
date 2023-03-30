@@ -124,44 +124,44 @@ public class FrameVentas extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel4.setText("Cedula:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 32, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel5.setText("Edad:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 32, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel6.setText("Nombre: ");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 71, -1, -1));
 
         txtCedula.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         txtCedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 140, -1));
+        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 32, 140, -1));
 
         txtNombre.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 140, -1));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 71, 140, -1));
 
         txtEdad.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         txtEdad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 124, -1));
+        jPanel2.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 32, 124, -1));
 
         jLabel7.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel7.setText("Correo:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, -1, -1));
 
         txtCorreo.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 124, -1));
+        jPanel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 71, 124, -1));
 
         jLabel10.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         jLabel10.setText("Lvl frecuencia");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 102, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 46, 102, -1));
 
         jLabel11.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 32, 44));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 69, 32, 44));
 
         btnNuevoCliente.setBackground(new java.awt.Color(135, 106, 48));
         btnNuevoCliente.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
@@ -174,7 +174,7 @@ public class FrameVentas extends javax.swing.JFrame {
                 btnNuevoClienteActionPerformed(evt);
             }
         });
-        jPanel2.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 30, 117, 30));
+        jPanel2.add(btnNuevoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 30, 117, 30));
 
         btnIngresoCliente.setBackground(new java.awt.Color(135, 106, 48));
         btnIngresoCliente.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
@@ -187,17 +187,17 @@ public class FrameVentas extends javax.swing.JFrame {
                 btnIngresoClienteActionPerformed(evt);
             }
         });
-        jPanel2.add(btnIngresoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 117, 33));
+        jPanel2.add(btnIngresoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 117, 33));
 
         jLabel12.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel12.setText("Sexo:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 111, -1, -1));
 
         jComboBox1.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer", "Otro", " " }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 110, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 880, 150));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 880, 150));
 
         jPanel3.setBackground(new java.awt.Color(153, 255, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true), "COMPRA DE BOLETAS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 14))); // NOI18N
@@ -319,17 +319,17 @@ public class FrameVentas extends javax.swing.JFrame {
         });
         jPanel3.add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 90, 30));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 610, 520));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 610, 520));
 
         jPanel4.setBackground(new java.awt.Color(153, 255, 153));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "ADICIONES", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 14))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Adiciones", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 14))); // NOI18N
         jPanel4.setOpaque(false);
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel1.setText("Adiciones basicas");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
         cbAdicionBasica1.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionBasica1.setText("Gorra con logo del zoo            $10,000");
@@ -338,49 +338,49 @@ public class FrameVentas extends javax.swing.JFrame {
                 cbAdicionBasica1ActionPerformed(evt);
             }
         });
-        jPanel4.add(cbAdicionBasica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jPanel4.add(cbAdicionBasica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         cbAdicionBasica2.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionBasica2.setText("Bloqueador para el sol             $7,000");
-        jPanel4.add(cbAdicionBasica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel4.add(cbAdicionBasica2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         cbAdicionBasica3.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionBasica3.setText("Repelente para mosquitos      $15,000");
-        jPanel4.add(cbAdicionBasica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jPanel4.add(cbAdicionBasica3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel2.setText("Adiciones de zona verde");
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, -1));
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, -1, -1));
 
         cbAdicionEstandar1.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionEstandar1.setText("Bote de comida para animales     $4,000");
-        jPanel4.add(cbAdicionEstandar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, 20));
+        jPanel4.add(cbAdicionEstandar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, 20));
 
         cbAdicionEstandar2.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionEstandar2.setText("Paseo en semi montana rusa        $8,000");
-        jPanel4.add(cbAdicionEstandar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
+        jPanel4.add(cbAdicionEstandar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
         cbAdicionEstandar3.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionEstandar3.setText("Foto con Fiton (Piton del zoo)    $10,000");
-        jPanel4.add(cbAdicionEstandar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
+        jPanel4.add(cbAdicionEstandar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel3.setText("Adiciones estandars");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, -1, -1));
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
 
         cbAdicionZV1.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionZV1.setText("Acesso a fogata con malvaviscos                     $8,000");
-        jPanel4.add(cbAdicionZV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
+        jPanel4.add(cbAdicionZV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         cbAdicionZV2.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionZV2.setText("Acesso a tobogan de agua                             $15,000");
-        jPanel4.add(cbAdicionZV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
+        jPanel4.add(cbAdicionZV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
         cbAdicionZV3.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionZV3.setText("Entrada a zona de Capybaras                         $8,000");
-        jPanel4.add(cbAdicionZV3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+        jPanel4.add(cbAdicionZV3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
 
         cbAdicionZV4.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionZV4.setText("Camisa de (Amor por los carpinchos)             $18,000");
@@ -389,20 +389,20 @@ public class FrameVentas extends javax.swing.JFrame {
                 cbAdicionZV4ActionPerformed(evt);
             }
         });
-        jPanel4.add(cbAdicionZV4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
+        jPanel4.add(cbAdicionZV4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel8.setText("Adiciones en zona de pescas");
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 210, -1));
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 210, -1));
 
         cbAdicionZP1.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionZP1.setText(" Alquiler de Cana de pescar con carnadas    $35,000");
-        jPanel4.add(cbAdicionZP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
+        jPanel4.add(cbAdicionZP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
 
         cbAdicionZP2.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionZP2.setText("Gorro de pesca                                              $13,000");
-        jPanel4.add(cbAdicionZP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
+        jPanel4.add(cbAdicionZP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
 
         cbAdicionZP3.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionZP3.setText("Paseo en bote por el lago de pesca                $10,000");
@@ -411,19 +411,15 @@ public class FrameVentas extends javax.swing.JFrame {
                 cbAdicionZP3ActionPerformed(evt);
             }
         });
-        jPanel4.add(cbAdicionZP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
+        jPanel4.add(cbAdicionZP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
 
         cbAdicionZP4.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         cbAdicionZP4.setText("Visita a la isla de kong                                   $17,000");
-        jPanel4.add(cbAdicionZP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, -1, -1));
+        jPanel4.add(cbAdicionZP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
 
         agregarCompra.setBackground(new java.awt.Color(153, 255, 153));
         agregarCompra.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-<<<<<<< HEAD
-        agregarCompra.setText("Añadir compra");
-=======
-        agregarCompra.setText("COMPRAR");
->>>>>>> 71a4c42c3816a968b473ac85a7f6023fbbaf3f1e
+        agregarCompra.setText("comprar");
         agregarCompra.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         agregarCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -434,8 +430,7 @@ public class FrameVentas extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(153, 255, 153));
         jButton1.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-<<<<<<< HEAD
-        jButton1.setText("Ver factura");
+        jButton1.setText("ver factura");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -443,13 +438,8 @@ public class FrameVentas extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 180, 50));
-=======
-        jButton1.setText("VER  FACTURA");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 180, 50));
->>>>>>> 71a4c42c3816a968b473ac85a7f6023fbbaf3f1e
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 590, 520));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, 590, 520));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo1.jpg"))); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -50, 1280, 800));
