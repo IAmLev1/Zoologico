@@ -474,7 +474,7 @@
                         <StringItem index="0" value="         === PLAN 4 ==="/>
                         <StringItem index="1" value="             (Individual)"/>
                         <StringItem index="2" value="- Ingreso a zona verde."/>
-                        <StringItem index="3" value="- Espectaculo de delfines."/>
+                        <StringItem index="3" value="- Espect&#xe1;culo de delfines."/>
                         <StringItem index="4" value="- Entrada a zona de pesca"/>
                         <StringItem index="5" value="(no incluye compras)"/>
                         <StringItem index="6" value=" "/>
@@ -558,7 +558,7 @@
                         <StringItem index="1" value="                 (Familiar)"/>
                         <StringItem index="2" value="- Ingreso de 4 personas."/>
                         <StringItem index="3" value="- Tour por el zoo."/>
-                        <StringItem index="4" value="- Espectaculo de delfines."/>
+                        <StringItem index="4" value="- Espect&#xe1;culo de delfines."/>
                         <StringItem index="5" value="- Ingreso a zona verde."/>
                         <StringItem index="6" value=" "/>
                         <StringItem index="7" value="Precio:"/>
@@ -814,7 +814,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Paseo en semi montana rusa        $8,000"/>
+                <Property name="text" type="java.lang.String" value="Paseo en semi monta&#xf1;a rusa        $8,000"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -827,7 +827,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Foto con Fiton (Piton del zoo)    $10,000"/>
+                <Property name="text" type="java.lang.String" value="Foto con Fit&#xf3;n (Pit&#xf3;n del zoo)    $10,000"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -871,7 +871,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Acesso a tobogan de agua                             $15,000"/>
+                <Property name="text" type="java.lang.String" value="Acesso a tobog&#xe1;n de agua                             $15,000"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -931,7 +931,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Kristen ITC" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" Alquiler de Cana de pescar con carnadas    $35,000"/>
+                <Property name="text" type="java.lang.String" value=" Alquiler de Ca&#xf1;a de pescar con carnadas    $35,000"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

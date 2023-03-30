@@ -224,7 +224,7 @@ public class FrameVentas extends javax.swing.JFrame {
         jList3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jList3.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "         === PLAN 4 ===", "             (Individual)", "- Ingreso a zona verde.", "- Espectaculo de delfines.", "- Entrada a zona de pesca", "(no incluye compras)", " ", "Precio:", "               $ 50,000" };
+            String[] strings = { "         === PLAN 4 ===", "             (Individual)", "- Ingreso a zona verde.", "- Espectáculo de delfines.", "- Entrada a zona de pesca", "(no incluye compras)", " ", "Precio:", "               $ 50,000" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -246,7 +246,7 @@ public class FrameVentas extends javax.swing.JFrame {
         jList5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jList5.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         jList5.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "           === PLAN 5 ===", "                 (Familiar)", "- Ingreso de 4 personas.", "- Tour por el zoo.", "- Espectaculo de delfines.", "- Ingreso a zona verde.", " ", "Precio:", "                 $ 78,000", " " };
+            String[] strings = { "           === PLAN 5 ===", "                 (Familiar)", "- Ingreso de 4 personas.", "- Tour por el zoo.", "- Espectáculo de delfines.", "- Ingreso a zona verde.", " ", "Precio:", "                 $ 78,000", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -353,11 +353,11 @@ public class FrameVentas extends javax.swing.JFrame {
         jPanel4.add(cbAdicionEstandar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, 20));
 
         cbAdicionEstandar2.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
-        cbAdicionEstandar2.setText("Paseo en semi montana rusa        $8,000");
+        cbAdicionEstandar2.setText("Paseo en semi montaña rusa        $8,000");
         jPanel4.add(cbAdicionEstandar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
         cbAdicionEstandar3.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
-        cbAdicionEstandar3.setText("Foto con Fiton (Piton del zoo)    $10,000");
+        cbAdicionEstandar3.setText("Foto con Fitón (Pitón del zoo)    $10,000");
         jPanel4.add(cbAdicionEstandar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
@@ -370,7 +370,7 @@ public class FrameVentas extends javax.swing.JFrame {
         jPanel4.add(cbAdicionZV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
 
         cbAdicionZV2.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
-        cbAdicionZV2.setText("Acesso a tobogan de agua                             $15,000");
+        cbAdicionZV2.setText("Acesso a tobogán de agua                             $15,000");
         jPanel4.add(cbAdicionZV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
         cbAdicionZV3.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
@@ -392,7 +392,7 @@ public class FrameVentas extends javax.swing.JFrame {
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 210, -1));
 
         cbAdicionZP1.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
-        cbAdicionZP1.setText(" Alquiler de Cana de pescar con carnadas    $35,000");
+        cbAdicionZP1.setText(" Alquiler de Caña de pescar con carnadas    $35,000");
         jPanel4.add(cbAdicionZP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
 
         cbAdicionZP2.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
