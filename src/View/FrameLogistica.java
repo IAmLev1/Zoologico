@@ -278,22 +278,23 @@ public class FrameLogistica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoAnimalActionPerformed
-        Animal animal = new Animal();
+        AnimalSalvaje animalSalvaje = new AnimalSalvaje();
+        AnimalDomestico animalDomestico = new AnimalDomestico();
         String nomAnimal, nivelPeligrosidad, raza;
         int codAnimal;
         if (rbSalvaje.isSelected()) {
             nomAnimal = txtNombreAnimal1.getText();
             nivelPeligrosidad = (String) cbNivelPeli.getSelectedItem();
             codAnimal = Integer.parseInt(txtCodigoAnimal.getText());
-            animal = new AnimalSalvaje(nivelPeligrosidad, codAnimal, nomAnimal);
-            deptoLog.ingresar(animal);
+            animalSalvaje = new AnimalSalvaje(nivelPeligrosidad, codAnimal, nomAnimal);
+            deptoLog.ingresarAnimSalvaje(animalSalvaje);
         }
         else if (rbDomestico.isSelected()) {
             nomAnimal = txtNombreAnimal1.getText();
             raza = txtRazaAnimal.getText();
             codAnimal = Integer.parseInt(txtCodigoAnimal.getText());
-            animal = new AnimalDomestico(raza, codAnimal, nomAnimal);
-            deptoLog.ingresar(animal);
+            animalDomestico = new AnimalDomestico(raza, codAnimal, nomAnimal);
+            deptoLog.ingresarAnimDomestico(animalDomestico);
         }
         
         
@@ -309,11 +310,14 @@ public class FrameLogistica extends javax.swing.JFrame {
 
     private void btnRetiroAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiroAnimal1ActionPerformed
         String motivoRetiro, retiro;
-        int codAnimal, codAnimalRetiro;
+        List<Animal> allAnimals = new ArrayList<Animal>();
+        allAnimals.addAll(deptoLog.showListAnimDomesticos());
+        allAnimals.addAll(deptoLog.showListAnimSalvajes());
+        int codAnimal;
         codAnimal = Integer.parseInt(txtCodigoAnimalBusq.getText());
         motivoRetiro = txtMotivoRetiro.getText();
-        for (int i = 0; i < deptoLog.showListAnim().size(); i++) {
-            if (deptoLog.showListAnim().get(i).getCodigo() == codAnimal) {
+        for (int i = 0; i < allAnimals.size(); i++) {
+            if (allAnimals.get(i).getCodigo() == codAnimal) {
                 deptoLog.eliminarAnimal(codAnimal);
                 retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado.\nMotivo: " + motivoRetiro;
                 retiros.add(retiro);
@@ -340,10 +344,10 @@ public class FrameLogistica extends javax.swing.JFrame {
         edad = Integer.parseInt(txtEdadAdop.getText());
         
         if (edad >= 18) {
-            for (int i = 0; i < deptoLog.showListAnim().size(); i++) {
-                if (deptoLog.showListAnim().get(i).getCodigo() == codAnim && deptoLog.showListAnim().get(i).getClass().getName().equals("AnimalDomestico")) {
+            for (int i = 0; i < deptoLog.showListAnimDomesticos().size(); i++) {
+                if (deptoLog.showListAnimDomesticos().get(i).getCodigo() == codAnim) {
                     adopcion = "El animal con el código: " + codAnim + "ha sido adoptado por: " + nombre;
-                    deptoLog.eliminarAnimal(codAnim);
+                    deptoLog.eliminarAnimalDomestico(codAnim);
                     adopciones.add(adopcion);
                     JOptionPane.showMessageDialog(null, "Adopçao exitosa");
                 }
