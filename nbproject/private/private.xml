@@ -3,71 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/Principal.java</file>
             <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/FrameVentas.java</file>
             <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/AnimalSalvaje.java</file>
             <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/FrameFactura.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Persona.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Animal.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/FrameLogistica.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Control/Report.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/FrameListaAnimal.java</file>
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/FrameVentas.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/FotoFiton.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/AnimalSalvaje.java</file>
             <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Control/DeptoLogistica.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/GorraZoo.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/Tobogan.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/GorroPesca.java</file>
             <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Persona.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/CañaPescarCarnadas.java</file>
             <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Animal.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/Repelente.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Control/Report.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/VisitaIslaKong.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/Fogata.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/FrameFactura.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Client.java</file>
             <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/FrameLogistica.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Plan.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/ZonaCapybaras.java</file>
+            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Control/Report.java</file>
             <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/FrameListaAnimal.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/View/Principal.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/Adicion.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/PaseoMontañaRusa.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/Bloqueador.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/BoteComida.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/CamisaCarpinchos.java</file>
-            <file>file:/C:/Users/trosq/OneDrive/Escritorio/UdeA/Técnicas%20de%20programación%20y%20laboratorio/Zoologico/src/Model/Adiciones/PaseoBote.java</file>
-=======
-<<<<<<< HEAD
->>>>>>> db6c50e0e95490ff75d9a94264fa27d7d0c07987
-            <file>file:/C:/Users/57319/Desktop/GitHub/Zoo/src/View/FrameLogistica.java</file>
-            <file>file:/C:/Users/57319/Desktop/GitHub/Zoo/src/Control/DeptoLogistica.java</file>
-            <file>file:/C:/Users/57319/Desktop/GitHub/Zoo/src/View/FrameFactura.java</file>
-            <file>file:/C:/Users/57319/Desktop/GitHub/Zoo/src/View/FrameListaAnimal.java</file>
-            <file>file:/C:/Users/57319/Desktop/GitHub/Zoo/src/View/FrameVentas.java</file>
-            <file>file:/C:/Users/57319/Desktop/GitHub/Zoo/src/Model/AnimalDomestico.java</file>
-<<<<<<< HEAD
-=======
-=======
-            <file>file:/C:/Users/usuario/OneDrive/Documentos/Tecnicas/zoo/src/Control/DeptoLogistica.java</file>
-            <file>file:/C:/Users/usuario/OneDrive/Documentos/Tecnicas/zoo/src/Model/Client.java</file>
-            <file>file:/C:/Users/usuario/OneDrive/Documentos/Tecnicas/zoo/src/View/Principal.java</file>
-            <file>file:/C:/Users/usuario/OneDrive/Documentos/Tecnicas/zoo/src/View/FrameFactura.java</file>
-            <file>file:/C:/Users/usuario/OneDrive/Documentos/Tecnicas/zoo/src/View/FrameLogistica.java</file>
-            <file>file:/C:/Users/usuario/OneDrive/Documentos/Tecnicas/zoo/src/Model/Plan.java</file>
-            <file>file:/C:/Users/usuario/OneDrive/Documentos/Tecnicas/zoo/src/View/FrameVentas.java</file>
-            <file>file:/C:/Users/usuario/OneDrive/Documentos/Tecnicas/zoo/src/View/FrameListaAnimal.java</file>
->>>>>>> 39f60d7044ecc2d32566f38a6effd7fb06d53797
->>>>>>> 2e5ba905e06965b9e78777a355c6b3bdfd357761
->>>>>>> db6c50e0e95490ff75d9a94264fa27d7d0c07987
->>>>>>> e1b696bbe300aea67f15d6f77c15d54d1aab9edd
         </group>
     </open-files>
 </project-private>

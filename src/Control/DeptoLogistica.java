@@ -1,6 +1,5 @@
 package Control;
 
-import Model.Animal;
 import Model.AnimalDomestico;
 import Model.AnimalSalvaje;
 import com.itextpdf.text.Document;
@@ -40,23 +39,18 @@ public class DeptoLogistica {
         animDomesticos.add(animDomestico);
     }
     
-    public void eliminarAnimal(int cod) {
-        for (int i = 0; i < animDomesticos.size(); i++) {
-            if(animDomesticos.get(i).getCodigo() == cod) {
-                animDomesticos.remove(i);
-            }
-        }
-        for (int i = 0; i < animSalvajes.size(); i++) {
-            if(animSalvajes.get(i).getCodigo() == cod) {
-                animSalvajes.remove(i);
-            }
-        }
-    }
-    
     public void eliminarAnimalDomestico(int cod) {
         for (int i = 0; i < animDomesticos.size(); i++) {
             if(animDomesticos.get(i).getCodigo() == cod) {
                 animDomesticos.remove(i);
+            }
+        }
+    }
+    
+    public void eliminarAnimalSalvaje(int cod) {
+        for (int i = 0; i < animSalvajes.size(); i++) {
+            if(animSalvajes.get(i).getCodigo() == cod) {
+                animSalvajes.remove(i);
             }
         }
     }
