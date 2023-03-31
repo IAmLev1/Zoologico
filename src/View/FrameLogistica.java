@@ -1,6 +1,5 @@
 package View;
 
-import Control.DeptoLogistica;
 import Model.Animal;
 import Model.AnimalDomestico;
 import Model.AnimalSalvaje;
