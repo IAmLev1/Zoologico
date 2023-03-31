@@ -41,8 +41,9 @@ public class FrameLogistica extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
         jButtonVolver = new javax.swing.JButton();
-        jButtonVerListaAnimales = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonVerRetirosAdopciones = new javax.swing.JButton();
+        jButtonVerListaAnimal = new javax.swing.JButton();
+        jButtonGenerarPDF = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -80,6 +81,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         btnRetiroAnimal1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -99,25 +101,35 @@ public class FrameLogistica extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 110, 40));
 
-        jButtonVerListaAnimales.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-        jButtonVerListaAnimales.setText("Ver lista de animales");
-        jButtonVerListaAnimales.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButtonVerListaAnimales.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVerRetirosAdopciones.setFont(new java.awt.Font("Kristen ITC", 1, 8)); // NOI18N
+        jButtonVerRetirosAdopciones.setText("Ver lista de animales retirados y adoptados");
+        jButtonVerRetirosAdopciones.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonVerRetirosAdopciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerListaAnimalesActionPerformed(evt);
+                jButtonVerRetirosAdopcionesActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonVerListaAnimales, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 40));
+        jPanel1.add(jButtonVerRetirosAdopciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 190, 60));
 
-        jButton1.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-        jButton1.setText("Generar PDF de personas");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVerListaAnimal.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
+        jButtonVerListaAnimal.setText("Ver lista de animales");
+        jButtonVerListaAnimal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonVerListaAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonVerListaAnimalActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 210, 40));
+        jPanel1.add(jButtonVerListaAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 40));
+
+        jButtonGenerarPDF.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
+        jButtonGenerarPDF.setText("Generar PDF de personas");
+        jButtonGenerarPDF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonGenerarPDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGenerarPDFActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonGenerarPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 210, 40));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true), "Ingresar Animal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 18))); // NOI18N
         jPanel2.setOpaque(false);
@@ -274,6 +286,7 @@ public class FrameLogistica extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoNuevo.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1660, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 190, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 470));
 
@@ -332,6 +345,10 @@ public class FrameLogistica extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRetiroAnimal1ActionPerformed
 
+    public List<String> showListAnimalesRetirados () {
+        return retiros;
+    }
+    
     private void txtNombreAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreAnimal1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreAnimal1ActionPerformed
@@ -352,7 +369,7 @@ public class FrameLogistica extends javax.swing.JFrame {
                     adopcion = "El animal con el código: " + codAnim + "ha sido adoptado por: " + nombre;
                     deptoLog.eliminarAnimalDomestico(codAnim);
                     adopciones.add(adopcion);
-                    JOptionPane.showMessageDialog(null, "Adopçao exitosa");
+                    JOptionPane.showMessageDialog(null, "Adopción exitosa");
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "No se ha encontrado animal con este código o el código ingresado pertenece a un animal salvaje");
@@ -363,27 +380,37 @@ public class FrameLogistica extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debe ser mayor de edad para llevar a cabo la adopción");
         }
     }//GEN-LAST:event_jButtonAdoptarAnimalActionPerformed
-
+   
+    public List<String> showListAnimalesAdoptados () {
+        return adopciones;
+    }
+    
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
         Principal main = new Principal();
         main.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
-    private void jButtonVerListaAnimalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerListaAnimalesActionPerformed
-        FrameListaAnimal FListaAnimal = new FrameListaAnimal();
-        FListaAnimal.setVisible(true);
+    private void jButtonVerRetirosAdopcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerRetirosAdopcionesActionPerformed
+        FrameRetiroAdopcionAnimales FRetAdop = new FrameRetiroAdopcionAnimales();
+        FRetAdop.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonVerListaAnimalesActionPerformed
+    }//GEN-LAST:event_jButtonVerRetirosAdopcionesActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonGenerarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarPDFActionPerformed
         try {
             Depto.generarPdfPersona();
         }catch (DocumentException ex) {
         }catch(NullPointerException e){
             System.err.println("xd"+e.getMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonGenerarPDFActionPerformed
+
+    private void jButtonVerListaAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerListaAnimalActionPerformed
+        FrameListaAnimal FListAnimal = new FrameListaAnimal();
+        FListAnimal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonVerListaAnimalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -392,9 +419,10 @@ public class FrameLogistica extends javax.swing.JFrame {
     private javax.swing.JButton btnRetiroAnimal1;
     private javax.swing.ButtonGroup buttonGroupTipoDeAnimal;
     private javax.swing.JComboBox<String> cbNivelPeligrosidad;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAdoptarAnimal;
-    private javax.swing.JButton jButtonVerListaAnimales;
+    private javax.swing.JButton jButtonGenerarPDF;
+    private javax.swing.JButton jButtonVerListaAnimal;
+    private javax.swing.JButton jButtonVerRetirosAdopciones;
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -418,6 +446,7 @@ public class FrameLogistica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton rbDomestico;
     private javax.swing.JRadioButton rbSalvaje;
     private javax.swing.JTextField txtCedulaAdop;

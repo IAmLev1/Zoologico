@@ -3,7 +3,6 @@ package View;
 import Control.DeptoLogistica;
 import Model.AnimalDomestico;
 import Model.AnimalSalvaje;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -32,15 +31,15 @@ public class FrameListaAnimal extends javax.swing.JFrame {
         columnaAnimalesSalvajes = new String[3];
         columnaAnimalesSalvajes[0] = "Código";
         columnaAnimalesSalvajes[1] = "Nombre";
-        columnaAnimalesSalvajes[2] = "Nivel de peligrosidad";
+        columnaAnimalesSalvajes[2] = "Peligrosidad";
         modeloTablaAnimalesDomesticos.setColumnIdentifiers(columnaAnimalesDomesticos);
         modeloTablaAnimalesSalvajes.setColumnIdentifiers(columnaAnimalesSalvajes);
         listaAnimalesDomesticos = deptoLog.showListAnimDomesticos();
         listaAnimalesSalvajes = deptoLog.showListAnimSalvajes();
-        LlenarLista();
+        LlenarListas();
     }
     
-    void LlenarLista(){
+    void LlenarListas(){
         modeloTablaAnimalesDomesticos.getDataVector().removeAllElements();
         modeloTablaAnimalesSalvajes.getDataVector().removeAllElements();
         tblAnimalDomestico.updateUI();
@@ -57,26 +56,6 @@ public class FrameListaAnimal extends javax.swing.JFrame {
             modeloTablaAnimalesSalvajes.addRow(new Object[] {listaAnimalesSalvajes.get(i).getCodigo(), listaAnimalesSalvajes.get(i).getNombre(),
             listaAnimalesSalvajes.get(i).getNivelPeligrosidad()});
         }
-        
-//        if (tblAnimalDomestico.getRowCount() > 0)
-//        {
-//            for (int i = 0; i < tblAnimalDomestico.getRowCount(); i++)
-//            {
-//                columnaPrecios = Float.parseFloat(tblAnimalDomestico.getValueAt(i, 4).toString());
-//                sumaTotal += columnaPrecios;
-//            }
-//        }
-        
-//        lblTotalInstrumentos.setText(Float.toString(sumaTotal));
-//        
-//        if (tbl1.getRowCount() > 0)
-//        {
-//            for (i = 0; i < tbl1.getRowCount(); i++)
-//            {
-//                columnaCantidades = Integer.parseInt(tbl1.getValueAt(i, 1).toString());
-//                sumaCantidades += columnaCantidades;
-//            }
-//        }
     }
 
     

@@ -1,9 +1,5 @@
 package Model;
 
-/**
- *
- * @author Levi.ing
- */
 public class AnimalDomestico extends Animal {
 
     private String raza;

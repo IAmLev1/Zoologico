@@ -69,7 +69,7 @@ public class DeptoLogistica {
         return animDomesticos;
     }
     
-        public List<Client> showListClien () {
+    public List<Client> showListClien () {
         return listaClientes;
     }
 

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package View;
 
 import Control.DeptoLogistica;
@@ -11,10 +7,6 @@ import Model.Client;
 import Model.Plan;
 import Model.Adiciones.*;
 
-/**
- *
- * @author Levi.ing
- */
 public class FrameVentas extends javax.swing.JFrame {
 
     private List<Client> clientes;
