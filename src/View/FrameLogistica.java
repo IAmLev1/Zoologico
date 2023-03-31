@@ -36,6 +36,7 @@ public class FrameLogistica extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupTipoDeAnimal = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
         jButtonVolver = new javax.swing.JButton();
@@ -50,7 +51,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         rbSalvaje = new javax.swing.JRadioButton();
         rbDomestico = new javax.swing.JRadioButton();
         jLabel17 = new javax.swing.JLabel();
-        cbNivelPeli = new javax.swing.JComboBox<>();
+        cbNivelPeligrosidad = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         txtNombreAnimal1 = new javax.swing.JTextField();
         btnIngresoAnimal = new javax.swing.JButton();
@@ -135,6 +136,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         jPanel2.add(txtRazaAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, -1));
         jPanel2.add(txtCodigoAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 60, -1));
 
+        buttonGroupTipoDeAnimal.add(rbSalvaje);
         rbSalvaje.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         rbSalvaje.setText("Salvaje");
         rbSalvaje.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +146,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         });
         jPanel2.add(rbSalvaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
 
+        buttonGroupTipoDeAnimal.add(rbDomestico);
         rbDomestico.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         rbDomestico.setText("Doméstico");
         rbDomestico.addActionListener(new java.awt.event.ActionListener() {
@@ -157,9 +160,9 @@ public class FrameLogistica extends javax.swing.JFrame {
         jLabel17.setText("Tipo de animal:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        cbNivelPeli.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
-        cbNivelPeli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
-        jPanel2.add(cbNivelPeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 50, -1));
+        cbNivelPeligrosidad.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
+        cbNivelPeligrosidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        jPanel2.add(cbNivelPeligrosidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 50, -1));
 
         jLabel18.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel18.setText("Nivel de peligrosidad:");
@@ -283,7 +286,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         int codAnimal;
         if (rbSalvaje.isSelected()) {
             nomAnimal = txtNombreAnimal1.getText();
-            nivelPeligrosidad = (String) cbNivelPeli.getSelectedItem();
+            nivelPeligrosidad = (String) cbNivelPeligrosidad.getSelectedItem();
             codAnimal = Integer.parseInt(txtCodigoAnimal.getText());
             animalSalvaje = new AnimalSalvaje(nivelPeligrosidad, codAnimal, nomAnimal);
             deptoLog.ingresarAnimSalvaje(animalSalvaje);
@@ -295,16 +298,16 @@ public class FrameLogistica extends javax.swing.JFrame {
             animalDomestico = new AnimalDomestico(raza, codAnimal, nomAnimal);
             deptoLog.ingresarAnimDomestico(animalDomestico);
         }
-        
-        
     }//GEN-LAST:event_btnIngresoAnimalActionPerformed
 
     private void rbSalvajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSalvajeActionPerformed
-        // TODO add your handling code here:
+        txtRazaAnimal.setEnabled(false);
+        cbNivelPeligrosidad.setEnabled(true);
     }//GEN-LAST:event_rbSalvajeActionPerformed
 
     private void rbDomesticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbDomesticoActionPerformed
-        // TODO add your handling code here:
+        cbNivelPeligrosidad.setEnabled(false);
+        txtRazaAnimal.setEnabled(true);
     }//GEN-LAST:event_rbDomesticoActionPerformed
 
     private void btnRetiroAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiroAnimal1ActionPerformed
@@ -386,7 +389,8 @@ public class FrameLogistica extends javax.swing.JFrame {
     private javax.swing.JLabel Logo;
     private javax.swing.JButton btnIngresoAnimal;
     private javax.swing.JButton btnRetiroAnimal1;
-    private javax.swing.JComboBox<String> cbNivelPeli;
+    private javax.swing.ButtonGroup buttonGroupTipoDeAnimal;
+    private javax.swing.JComboBox<String> cbNivelPeligrosidad;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAdoptarAnimal;
     private javax.swing.JButton jButtonVerListaAnimales;
