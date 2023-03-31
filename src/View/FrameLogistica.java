@@ -1,6 +1,5 @@
 package View;
 
-import Control.DeptoLogistica;
 import Model.Animal;
 import Model.AnimalDomestico;
 import Model.AnimalSalvaje;
@@ -22,8 +21,8 @@ public class FrameLogistica extends javax.swing.JFrame {
     
     public FrameLogistica() {
         initComponents();
-        retiros = new ArrayList<String>();
-        adopciones = new ArrayList<String>();
+        retiros = new ArrayList<>();
+        adopciones = new ArrayList<>();
         this.setLocationRelativeTo(null);
         Depto = new DeptoLogistica();
     }
@@ -326,15 +325,27 @@ public class FrameLogistica extends javax.swing.JFrame {
 
     private void btnRetiroAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiroAnimal1ActionPerformed
         String motivoRetiro, retiro;
-        List<Animal> allAnimals = new ArrayList<Animal>();
+        List<Animal> allAnimals = new ArrayList<>();
         allAnimals.addAll(deptoLog.showListAnimDomesticos());
         allAnimals.addAll(deptoLog.showListAnimSalvajes());
         int codAnimal;
         codAnimal = Integer.parseInt(txtCodigoAnimalBusq.getText());
         motivoRetiro = txtMotivoRetiro.getText();
-        for (int i = 0; i < allAnimals.size(); i++) {
-            if (allAnimals.get(i).getCodigo() == codAnimal) {
-                deptoLog.eliminarAnimal(codAnimal);
+        
+        for (int i = 0; i < deptoLog.showListAnimDomesticos().size(); i++) {
+            if (deptoLog.showListAnimDomesticos().get(i).getCodigo() == codAnimal) {
+                deptoLog.eliminarAnimalDomestico(codAnimal);
+                retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado.\nMotivo: " + motivoRetiro;
+                retiros.add(retiro);
+                JOptionPane.showMessageDialog(null, "El ánimal ha sido eliminado exitosamente");
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "No se ha encontrado ningún animal con este código");
+            }
+        }
+        for (int i = 0; i < deptoLog.showListAnimSalvajes().size(); i++) {
+            if (deptoLog.showListAnimDomesticos().get(i).getCodigo() == codAnimal) {
+                deptoLog.eliminarAnimalSalvaje(codAnimal);
                 retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado.\nMotivo: " + motivoRetiro;
                 retiros.add(retiro);
                 JOptionPane.showMessageDialog(null, "El ánimal ha sido eliminado exitosamente");
