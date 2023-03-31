@@ -7,7 +7,7 @@ import java.util.List;
 
 public class FrameFactura extends javax.swing.JFrame {
     
-    private List<Client> c;
+    private List<Client> cliente;
     private DeptoLogistica deptolog;
     private String cedula;
 
@@ -181,8 +181,8 @@ public class FrameFactura extends javax.swing.JFrame {
         lblSumaPrecios1.setText("(precio)");
         jPanel1.add(lblSumaPrecios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoFactura.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 60));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoFactura1.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,17 +206,17 @@ public class FrameFactura extends javax.swing.JFrame {
 
     
     void factura(){
-        c = deptolog.showListClien();
-        for(int i=0; i < c.size(); i++){
-            if(c.get(i).getCedula().equals(cedula))
-            lblCed.setText(c.get(i).getCedula());
-            lblNombre.setText(c.get(i).getNombre());
-            lblTel.setText(c.get(i).getCorreo());
-            lblCantidad.setText(""+c.get(i).getContAdiciones());
-            lblNomInst1.setText(c.get(i).getPlan().getNumPlan());
-            lblSumaPrecios1.setText(""+c.get(i).getPlan().getPrecio());
-            lblSumaPrecios.setText(""+c.get(i).getValorAdiciones());
-            lblTotal.setText(""+c.get(i).getDinero());
+        cliente = deptolog.showListClien();
+        for(int i=0; i < cliente.size(); i++){
+            if(cliente.get(i).getCedula().equals(cedula))
+            lblNombre.setText(cliente.get(i).getNombre());
+            lblCed.setText(cedula);
+            lblTel.setText(cliente.get(i).getCorreo());
+            lblCantidad.setText(""+cliente.get(i).getContAdiciones());
+            lblNomInst1.setText(cliente.get(i).getPlan().getNumPlan());
+            lblSumaPrecios1.setText(""+cliente.get(i).getPlan().getPrecio());
+            lblSumaPrecios.setText(""+cliente.get(i).getValorAdiciones());
+            lblTotal.setText(""+cliente.get(i).getDinero());
             
         }
         

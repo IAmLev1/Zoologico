@@ -1,27 +1,23 @@
 package Model;
 
-/**
- *
- * @author Levi.ing
- */
 public class Animal {
 
-    private int codigo;
+    private String codigo;
     private String nombre;
 
     public Animal() {
     }
 
-    public Animal(int codigo, String nombre) {
+    public Animal(String codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 

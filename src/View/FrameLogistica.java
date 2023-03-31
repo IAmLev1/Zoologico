@@ -1,29 +1,20 @@
 package View;
 
-import Control.DeptoLogistica;
-import Model.Animal;
 import Model.AnimalDomestico;
 import Model.AnimalSalvaje;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import Control.DeptoLogistica;
 import com.itextpdf.text.DocumentException;
 
-/**
- *
- * @author Levi.ing
- */
+
 public class FrameLogistica extends javax.swing.JFrame {
-    private List<String> retiros;
-    private List<String> adopciones;
+
     private DeptoLogistica deptoLog = new DeptoLogistica();
     DeptoLogistica Depto;
-    
+
     public FrameLogistica() {
         initComponents();
-        retiros = new ArrayList<String>();
-        adopciones = new ArrayList<String>();
         this.setLocationRelativeTo(null);
         Depto = new DeptoLogistica();
     }
@@ -37,12 +28,14 @@ public class FrameLogistica extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupTipoDeAnimal = new javax.swing.ButtonGroup();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
-        NombreEmpresa = new javax.swing.JLabel();
         jButtonVolver = new javax.swing.JButton();
-        jButtonVerListaAnimales = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonVerRetirosAdopciones = new javax.swing.JButton();
+        jButtonVerListaAnimal = new javax.swing.JButton();
+        jButtonGenerarPDF = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -52,7 +45,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         rbSalvaje = new javax.swing.JRadioButton();
         rbDomestico = new javax.swing.JRadioButton();
         jLabel17 = new javax.swing.JLabel();
-        cbNivelPeli = new javax.swing.JComboBox<>();
+        cbNivelPeligrosidad = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         txtNombreAnimal1 = new javax.swing.JTextField();
         btnIngresoAnimal = new javax.swing.JButton();
@@ -79,19 +72,18 @@ public class FrameLogistica extends javax.swing.JFrame {
         txtMotivoRetiro = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         btnRetiroAnimal1 = new javax.swing.JButton();
+        rbDomes = new javax.swing.JRadioButton();
+        rbSalva = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.png"))); // NOI18N
-        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 170, 120));
-
-        NombreEmpresa.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
-        NombreEmpresa.setText("LOS MIPAI");
-        jPanel1.add(NombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo1.png"))); // NOI18N
+        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 160, 160));
 
         jButtonVolver.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         jButtonVolver.setText("Volver");
@@ -101,27 +93,37 @@ public class FrameLogistica extends javax.swing.JFrame {
                 jButtonVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 110, 40));
+        jPanel1.add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 110, 40));
 
-        jButtonVerListaAnimales.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-        jButtonVerListaAnimales.setText("Ver lista de animales");
-        jButtonVerListaAnimales.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButtonVerListaAnimales.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVerRetirosAdopciones.setFont(new java.awt.Font("Kristen ITC", 1, 8)); // NOI18N
+        jButtonVerRetirosAdopciones.setText("Ver lista de animales retirados y adoptados");
+        jButtonVerRetirosAdopciones.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonVerRetirosAdopciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerListaAnimalesActionPerformed(evt);
+                jButtonVerRetirosAdopcionesActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonVerListaAnimales, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 40));
+        jPanel1.add(jButtonVerRetirosAdopciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 190, 60));
 
-        jButton1.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
-        jButton1.setText("Generar PDF");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVerListaAnimal.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
+        jButtonVerListaAnimal.setText("Ver lista de animales");
+        jButtonVerListaAnimal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonVerListaAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonVerListaAnimalActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 150, 40));
+        jPanel1.add(jButtonVerListaAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 40));
+
+        jButtonGenerarPDF.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
+        jButtonGenerarPDF.setText("Generar PDF de personas");
+        jButtonGenerarPDF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonGenerarPDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGenerarPDFActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonGenerarPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 210, 40));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true), "Ingresar Animal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Kristen ITC", 1, 18))); // NOI18N
         jPanel2.setOpaque(false);
@@ -141,6 +143,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         jPanel2.add(txtRazaAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, -1));
         jPanel2.add(txtCodigoAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 60, -1));
 
+        buttonGroupTipoDeAnimal.add(rbSalvaje);
         rbSalvaje.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         rbSalvaje.setText("Salvaje");
         rbSalvaje.addActionListener(new java.awt.event.ActionListener() {
@@ -150,6 +153,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         });
         jPanel2.add(rbSalvaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
 
+        buttonGroupTipoDeAnimal.add(rbDomestico);
         rbDomestico.setFont(new java.awt.Font("Kristen ITC", 1, 12)); // NOI18N
         rbDomestico.setText("Doméstico");
         rbDomestico.addActionListener(new java.awt.event.ActionListener() {
@@ -163,9 +167,9 @@ public class FrameLogistica extends javax.swing.JFrame {
         jLabel17.setText("Tipo de animal:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        cbNivelPeli.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
-        cbNivelPeli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
-        jPanel2.add(cbNivelPeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 50, -1));
+        cbNivelPeligrosidad.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
+        cbNivelPeligrosidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        jPanel2.add(cbNivelPeligrosidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 50, -1));
 
         jLabel18.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel18.setText("Nivel de peligrosidad:");
@@ -255,13 +259,13 @@ public class FrameLogistica extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel15.setText("Código:");
-        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
-        jPanel4.add(txtCodigoAnimalBusq, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 60, -1));
-        jPanel4.add(txtMotivoRetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 130, -1));
+        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        jPanel4.add(txtCodigoAnimalBusq, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 60, -1));
+        jPanel4.add(txtMotivoRetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 130, -1));
 
         jLabel16.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         jLabel16.setText(" Motivo:");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
 
         btnRetiroAnimal1.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
         btnRetiroAnimal1.setText("Retirar Animal");
@@ -270,12 +274,25 @@ public class FrameLogistica extends javax.swing.JFrame {
                 btnRetiroAnimal1ActionPerformed(evt);
             }
         });
-        jPanel4.add(btnRetiroAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
+        jPanel4.add(btnRetiroAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 370, 120));
+        buttonGroup1.add(rbDomes);
+        rbDomes.setText("Domestico");
+        rbDomes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbDomesActionPerformed(evt);
+            }
+        });
+        jPanel4.add(rbDomes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+
+        rbSalva.setText("Salvaje");
+        jPanel4.add(rbSalva, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 370, 160));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoNuevo.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1660, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 190, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 470));
 
@@ -283,84 +300,119 @@ public class FrameLogistica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresoAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoAnimalActionPerformed
-        Animal animal = new Animal();
+        AnimalSalvaje animalSalvaje = new AnimalSalvaje();
+        AnimalDomestico animalDomestico = new AnimalDomestico();
         String nomAnimal, nivelPeligrosidad, raza;
-        int codAnimal;
+        String codAnimal;
         if (rbSalvaje.isSelected()) {
             nomAnimal = txtNombreAnimal1.getText();
-            nivelPeligrosidad = (String) cbNivelPeli.getSelectedItem();
-            codAnimal = Integer.parseInt(txtCodigoAnimal.getText());
-            animal = new AnimalSalvaje(nivelPeligrosidad, codAnimal, nomAnimal);
-            deptoLog.ingresar(animal);
-        }
-        else if (rbDomestico.isSelected()) {
+            nivelPeligrosidad = (String) cbNivelPeligrosidad.getSelectedItem();
+            codAnimal = txtCodigoAnimal.getText();
+            animalSalvaje = new AnimalSalvaje(nivelPeligrosidad, codAnimal, nomAnimal);
+            deptoLog.ingresarAnimSalvaje(animalSalvaje);
+            JOptionPane.showMessageDialog(null, "El ánimal ha sido Ingresado exitosamente");
+
+        } else if (rbDomestico.isSelected()) {
             nomAnimal = txtNombreAnimal1.getText();
             raza = txtRazaAnimal.getText();
-            codAnimal = Integer.parseInt(txtCodigoAnimal.getText());
-            animal = new AnimalDomestico(raza, codAnimal, nomAnimal);
-            deptoLog.ingresar(animal);
+            codAnimal = txtCodigoAnimal.getText();
+            animalDomestico = new AnimalDomestico(raza, codAnimal, nomAnimal);
+            deptoLog.ingresarAnimDomestico(animalDomestico);
+            JOptionPane.showMessageDialog(null, "El ánimal ha sido Ingresado exitosamente");
         }
         
-        
+       registroAnimalClean();
     }//GEN-LAST:event_btnIngresoAnimalActionPerformed
 
     private void rbSalvajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSalvajeActionPerformed
-        // TODO add your handling code here:
+        txtRazaAnimal.setEnabled(false);
+        cbNivelPeligrosidad.setEnabled(true);
     }//GEN-LAST:event_rbSalvajeActionPerformed
 
     private void rbDomesticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbDomesticoActionPerformed
-        // TODO add your handling code here:
+        cbNivelPeligrosidad.setEnabled(false);
+        txtRazaAnimal.setEnabled(true);
     }//GEN-LAST:event_rbDomesticoActionPerformed
 
     private void btnRetiroAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetiroAnimal1ActionPerformed
-        String motivoRetiro, retiro;
-        int codAnimal, codAnimalRetiro;
-        codAnimal = Integer.parseInt(txtCodigoAnimalBusq.getText());
-        motivoRetiro = txtMotivoRetiro.getText();
-        for (int i = 0; i < deptoLog.showListAnim().size(); i++) {
-            if (deptoLog.showListAnim().get(i).getCodigo() == codAnimal) {
-                deptoLog.eliminarAnimal(codAnimal);
-                retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado.\nMotivo: " + motivoRetiro;
-                retiros.add(retiro);
-                JOptionPane.showMessageDialog(null, "El ánimal ha sido eliminado exitosamente");
-            }
-            else {
-                JOptionPane.showMessageDialog(null, "No se ha encontrado ningún animal con este código");
-            }
+        String codAnimal = txtCodigoAnimalBusq.getText();
+
+        if (rbDomes.isSelected()) {
+            retirarAnimalD(deptoLog.showListAnimDomesticos(), codAnimal);
+        } else {
+            retirarAnimalS(deptoLog.showListAnimSalvajes(), codAnimal);
         }
+        
+        registroAnimalClean();
+
     }//GEN-LAST:event_btnRetiroAnimal1ActionPerformed
+
+    void retirarAnimalD(List<AnimalDomestico> lista, String codAnimal) {
+
+        String motivoRetiro, retiro;
+        motivoRetiro = txtMotivoRetiro.getText();
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getCodigo().equals(codAnimal)) {
+                retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado.\tMotivo: " + motivoRetiro;
+                deptoLog.ingresarRetiros(retiro);
+                deptoLog.eliminarAnimalDomestico(codAnimal);
+                JOptionPane.showMessageDialog(null, "El ánimal ha sido eliminado exitosamente");
+                }
+        }
+
+    }
+
+    void retirarAnimalS(List<AnimalSalvaje> lista, String codAnimal) {
+
+        String motivoRetiro, retiro;
+        motivoRetiro = txtMotivoRetiro.getText();
+
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getCodigo().equals(codAnimal)) {
+                retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado.\tMotivo: " + motivoRetiro;
+                deptoLog.ingresarRetiros(retiro);
+                deptoLog.eliminarAnimalSalvaje(codAnimal);
+                JOptionPane.showMessageDialog(null, "El ánimal ha sido eliminado exitosamente");
+                }
+        }
+
+    }
+
+   
 
     private void txtNombreAnimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreAnimal1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreAnimal1ActionPerformed
 
     private void jButtonAdoptarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdoptarAnimalActionPerformed
-        String cedula, nombre, correo, adopcion;
-        int codAnim, edad;
-        
+        String cedula, nombre, correo, adopcion, codAnim;
+        int edad;
+
         cedula = txtCedulaAdop.getText();
         nombre = txtNombreAdop.getText();
         correo = txtCorreoAdop.getText();
-        codAnim = Integer.parseInt(txtCodigAnimalAdop.getText());
+        codAnim = txtCodigAnimalAdop.getText();
         edad = Integer.parseInt(txtEdadAdop.getText());
-        
+
         if (edad >= 18) {
-            for (int i = 0; i < deptoLog.showListAnim().size(); i++) {
-                if (deptoLog.showListAnim().get(i).getCodigo() == codAnim && deptoLog.showListAnim().get(i).getClass().getName().equals("AnimalDomestico")) {
+            for (int i = 0; i < deptoLog.showListAnimDomesticos().size(); i++) {
+                if (deptoLog.showListAnimDomesticos().get(i).getCodigo().equals(codAnim)) {
                     adopcion = "El animal con el código: " + codAnim + "ha sido adoptado por: " + nombre;
-                    deptoLog.eliminarAnimal(codAnim);
-                    adopciones.add(adopcion);
-                    JOptionPane.showMessageDialog(null, "Adopçao exitosa");
-                }
-                else {
+                    deptoLog.ingresarAdopciones(adopcion);
+                    deptoLog.eliminarAnimalDomestico(codAnim);
+                    JOptionPane.showMessageDialog(null, "Adopción exitosa");
+                } else {
                     JOptionPane.showMessageDialog(null, "No se ha encontrado animal con este código o el código ingresado pertenece a un animal salvaje");
                 }
             }
-        }
-        else {
+        } else {
             JOptionPane.showMessageDialog(null, "Debe ser mayor de edad para llevar a cabo la adopción");
         }
+        
+        adopcionAnimalClean();
     }//GEN-LAST:event_jButtonAdoptarAnimalActionPerformed
+
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
         Principal main = new Principal();
@@ -368,31 +420,66 @@ public class FrameLogistica extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
-    private void jButtonVerListaAnimalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerListaAnimalesActionPerformed
-        FrameListaAnimal FListaAnimal = new FrameListaAnimal();
-        FListaAnimal.setVisible(true);
+    private void jButtonVerRetirosAdopcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerRetirosAdopcionesActionPerformed
+        FrameRetiroAdopcionAnimales FRetAdop = new FrameRetiroAdopcionAnimales();
+        FRetAdop.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonVerListaAnimalesActionPerformed
+        
+    }//GEN-LAST:event_jButtonVerRetirosAdopcionesActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonGenerarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarPDFActionPerformed
         try {
-            Depto.generarPdf();
-        }catch (DocumentException ex) {
-        }catch(NullPointerException e){
-            System.err.println("xd"+e.getMessage());
+            Depto.generarPdfPersona();
+        } catch (DocumentException ex) {
+        } catch (NullPointerException e) {
+            System.err.println("xd" + e.getMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonGenerarPDFActionPerformed
 
+    private void jButtonVerListaAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerListaAnimalActionPerformed
+        FrameListaAnimal FListAnimal = new FrameListaAnimal();
+        FListAnimal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonVerListaAnimalActionPerformed
 
+    private void rbDomesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbDomesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbDomesActionPerformed
+
+    void registroAnimalClean(){
+        txtCodigoAnimal.setText("");
+        txtNombreAnimal1.setText("");
+        buttonGroupTipoDeAnimal.clearSelection();
+        txtRazaAnimal.setText("");
+        cbNivelPeligrosidad.setSelectedItem(0);
+    }
+    
+    void retiroAnimalClean(){
+        buttonGroup1.clearSelection();
+        txtCodigoAnimalBusq.setText("");
+        txtMotivoRetiro.setText("");
+    }
+    
+    void adopcionAnimalClean(){
+        txtCedulaAdop.setText("");
+        txtCodigAnimalAdop.setText("");
+        txtNombreAdop.setText("");
+        txtCorreoAdop.setText("");
+        txtEdadAdop.setText("");
+        
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Logo;
-    private javax.swing.JLabel NombreEmpresa;
     private javax.swing.JButton btnIngresoAnimal;
     private javax.swing.JButton btnRetiroAnimal1;
-    private javax.swing.JComboBox<String> cbNivelPeli;
-    private javax.swing.JButton jButton1;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroupTipoDeAnimal;
+    private javax.swing.JComboBox<String> cbNivelPeligrosidad;
     private javax.swing.JButton jButtonAdoptarAnimal;
-    private javax.swing.JButton jButtonVerListaAnimales;
+    private javax.swing.JButton jButtonGenerarPDF;
+    private javax.swing.JButton jButtonVerListaAnimal;
+    private javax.swing.JButton jButtonVerRetirosAdopciones;
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -416,7 +503,10 @@ public class FrameLogistica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton rbDomes;
     private javax.swing.JRadioButton rbDomestico;
+    private javax.swing.JRadioButton rbSalva;
     private javax.swing.JRadioButton rbSalvaje;
     private javax.swing.JTextField txtCedulaAdop;
     private javax.swing.JTextField txtCodigAnimalAdop;

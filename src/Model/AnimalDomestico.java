@@ -1,9 +1,5 @@
 package Model;
 
-/**
- *
- * @author Levi.ing
- */
 public class AnimalDomestico extends Animal {
 
     private String raza;
@@ -11,7 +7,7 @@ public class AnimalDomestico extends Animal {
     public AnimalDomestico() {
     }
 
-    public AnimalDomestico(String raza, int codigo, String nombre) {
+    public AnimalDomestico(String raza, String codigo, String nombre) {
         super(codigo, nombre);
         this.raza = raza;
     }

@@ -11,7 +11,7 @@ public class AnimalSalvaje extends Animal {
     public AnimalSalvaje() {
     }
 
-    public AnimalSalvaje(String nivelPeligrosidad, int codigo, String nombre) {
+    public AnimalSalvaje(String nivelPeligrosidad, String codigo, String nombre) {
         super(codigo, nombre);
         this.nivelPeligrosidad = nivelPeligrosidad;
     }
