@@ -653,7 +653,7 @@ public class FrameVentas extends javax.swing.JFrame {
                 jLabel11.setText(""+clientes.get(i).getLvlFrecuencia());
                 clientes.get(i).setPlan(plan);
                 clientToFrameLog = clientes.get(i);
-                deptoLog.ingresar(clientToFrameLog);
+                deptoLog.ingresarCliente(clientToFrameLog);
             }
         }
 

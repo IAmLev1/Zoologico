@@ -1,21 +1,94 @@
 package View;
 
-public class FrameListaAnimal extends javax.swing.JFrame {
+import Control.DeptoLogistica;
+import Model.AnimalDomestico;
+import Model.AnimalSalvaje;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
+public class FrameListaAnimal extends javax.swing.JFrame {
+    
+    private DeptoLogistica deptoLog;
+    private List<AnimalDomestico> listaAnimalesDomesticos;
+    private List<AnimalSalvaje> listaAnimalesSalvajes;
+    private String[] columnaAnimalesDomesticos;
+    private String[] columnaAnimalesSalvajes;
+    private DefaultTableModel modeloTablaAnimalesDomesticos;
+    private DefaultTableModel modeloTablaAnimalesSalvajes;
+    
     public FrameListaAnimal() {
         initComponents();
         setLocationRelativeTo(null);
+        deptoLog = new DeptoLogistica();
+        modeloTablaAnimalesDomesticos = new DefaultTableModel();
+        modeloTablaAnimalesSalvajes = new DefaultTableModel();
+        tblAnimalDomestico.setModel(modeloTablaAnimalesDomesticos);
+        columnaAnimalesDomesticos = new String[3];
+        columnaAnimalesDomesticos[0] = "Código";
+        columnaAnimalesDomesticos[1] = "Nombre";
+        columnaAnimalesDomesticos[2] = "Raza";
+        tblAnimalSalvaje.setModel(modeloTablaAnimalesSalvajes);
+        columnaAnimalesSalvajes = new String[3];
+        columnaAnimalesSalvajes[0] = "Código";
+        columnaAnimalesSalvajes[1] = "Nombre";
+        columnaAnimalesSalvajes[2] = "Nivel de peligrosidad";
+        modeloTablaAnimalesDomesticos.setColumnIdentifiers(columnaAnimalesDomesticos);
+        modeloTablaAnimalesSalvajes.setColumnIdentifiers(columnaAnimalesSalvajes);
+        listaAnimalesDomesticos = deptoLog.showListAnimDomesticos();
+        listaAnimalesSalvajes = deptoLog.showListAnimSalvajes();
+        LlenarLista();
+    }
+    
+    void LlenarLista(){
+        modeloTablaAnimalesDomesticos.getDataVector().removeAllElements();
+        modeloTablaAnimalesSalvajes.getDataVector().removeAllElements();
+        tblAnimalDomestico.updateUI();
+        tblAnimalSalvaje.updateUI();
+        
+        for (int i = 0; i < listaAnimalesDomesticos.size(); i++)
+        {
+            modeloTablaAnimalesDomesticos.addRow(new Object[] {listaAnimalesDomesticos.get(i).getCodigo(), listaAnimalesDomesticos.get(i).getNombre(),
+            listaAnimalesDomesticos.get(i).getRaza()});
+        }
+        
+        for (int i = 0; i < listaAnimalesSalvajes.size(); i++)
+        {
+            modeloTablaAnimalesSalvajes.addRow(new Object[] {listaAnimalesSalvajes.get(i).getCodigo(), listaAnimalesSalvajes.get(i).getNombre(),
+            listaAnimalesSalvajes.get(i).getNivelPeligrosidad()});
+        }
+        
+//        if (tblAnimalDomestico.getRowCount() > 0)
+//        {
+//            for (int i = 0; i < tblAnimalDomestico.getRowCount(); i++)
+//            {
+//                columnaPrecios = Float.parseFloat(tblAnimalDomestico.getValueAt(i, 4).toString());
+//                sumaTotal += columnaPrecios;
+//            }
+//        }
+        
+//        lblTotalInstrumentos.setText(Float.toString(sumaTotal));
+//        
+//        if (tbl1.getRowCount() > 0)
+//        {
+//            for (i = 0; i < tbl1.getRowCount(); i++)
+//            {
+//                columnaCantidades = Integer.parseInt(tbl1.getValueAt(i, 1).toString());
+//                sumaCantidades += columnaCantidades;
+//            }
+//        }
     }
 
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbl1 = new javax.swing.JTable();
+        tblAnimalSalvaje = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tbl2 = new javax.swing.JTable();
+        tblAnimalDomestico = new javax.swing.JTable();
         Logo = new javax.swing.JLabel();
         JLabel1 = new javax.swing.JLabel();
         JLabel2 = new javax.swing.JLabel();
@@ -28,8 +101,8 @@ public class FrameListaAnimal extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tbl1.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
-        tbl1.setModel(new javax.swing.table.DefaultTableModel(
+        tblAnimalSalvaje.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
+        tblAnimalSalvaje.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -45,12 +118,12 @@ public class FrameListaAnimal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tbl1);
+        jScrollPane1.setViewportView(tblAnimalSalvaje);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, 320, 420));
 
-        tbl2.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
-        tbl2.setModel(new javax.swing.table.DefaultTableModel(
+        tblAnimalDomestico.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
+        tblAnimalDomestico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -66,7 +139,7 @@ public class FrameListaAnimal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tbl2);
+        jScrollPane2.setViewportView(tblAnimalDomestico);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 320, 420));
 
@@ -120,7 +193,7 @@ public class FrameListaAnimal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tbl1;
-    private javax.swing.JTable tbl2;
+    private javax.swing.JTable tblAnimalDomestico;
+    private javax.swing.JTable tblAnimalSalvaje;
     // End of variables declaration//GEN-END:variables
 }

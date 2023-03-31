@@ -1,6 +1,8 @@
 package Control;
 
 import Model.Animal;
+import Model.AnimalDomestico;
+import Model.AnimalSalvaje;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -21,28 +23,50 @@ import java.util.List;
  */
 public class DeptoLogistica {
 
-    private static List<Animal> listaAnimales = new ArrayList<Animal>();
+    private static List<AnimalDomestico> animDomesticos = new ArrayList<AnimalDomestico>();
+    private static List<AnimalSalvaje> animSalvajes = new ArrayList<AnimalSalvaje>();
     private static List<Client> listaClientes = new ArrayList<Client>();
     
 
-    public void ingresar(Client cliente) {
+    public void ingresarCliente(Client cliente) {
         listaClientes.add(cliente);
     }
 
-    public void ingresar(Animal animal) {
-        listaAnimales.add(animal);
+    public void ingresarAnimSalvaje(AnimalSalvaje animSalvaje) {
+        animSalvajes.add(animSalvaje);
+    }
+    
+    public void ingresarAnimDomestico(AnimalDomestico animDomestico) {
+        animDomesticos.add(animDomestico);
     }
     
     public void eliminarAnimal(int cod) {
-        for (int i = 0; i < listaAnimales.size(); i++) {
-            if(listaAnimales.get(i).getCodigo() == cod) {
-                listaAnimales.remove(i);
+        for (int i = 0; i < animDomesticos.size(); i++) {
+            if(animDomesticos.get(i).getCodigo() == cod) {
+                animDomesticos.remove(i);
+            }
+        }
+        for (int i = 0; i < animSalvajes.size(); i++) {
+            if(animSalvajes.get(i).getCodigo() == cod) {
+                animSalvajes.remove(i);
+            }
+        }
+    }
+    
+    public void eliminarAnimalDomestico(int cod) {
+        for (int i = 0; i < animDomesticos.size(); i++) {
+            if(animDomesticos.get(i).getCodigo() == cod) {
+                animDomesticos.remove(i);
             }
         }
     }
 
-    public List<Animal> showListAnim () {
-        return listaAnimales;
+    public List<AnimalSalvaje> showListAnimSalvajes () {
+        return animSalvajes;
+    }
+    
+    public List<AnimalDomestico> showListAnimDomesticos () {
+        return animDomesticos;
     }
     
         public List<Client> showListClien () {
