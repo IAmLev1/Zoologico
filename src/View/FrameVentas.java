@@ -6,20 +6,16 @@ import java.util.List;
 import Model.Client;
 import Model.Plan;
 import Model.Adiciones.*;
+import javax.swing.JOptionPane;
 
 public class FrameVentas extends javax.swing.JFrame {
 
     private List<Client> clientes;
     private DeptoLogistica deptoLog = new DeptoLogistica();
-    public static String dni;
     private Adicion adicion;
 
-    /**
-     * Creates new form Frame2
-     */
     public FrameVentas() {
         clientes = new ArrayList<Client>();
-        dni = "";
         initComponents();
         setLocationRelativeTo(null);
         bloqueoTxt();
@@ -653,7 +649,8 @@ public class FrameVentas extends javax.swing.JFrame {
                 deptoLog.ingresarCliente(clientToFrameLog);
             }
         }
-
+    
+        JOptionPane.showMessageDialog(null, "La compra ha sido exitosa.");
 
     }//GEN-LAST:event_agregarCompraActionPerformed
 
@@ -676,8 +673,7 @@ public class FrameVentas extends javax.swing.JFrame {
 
     private void facturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facturaActionPerformed
         new FrameFactura().setVisible(true);
-        dni = txtCedula.getText();
-
+        this.setVisible(false);
     }//GEN-LAST:event_facturaActionPerformed
 
     void bloqueoTxt() {

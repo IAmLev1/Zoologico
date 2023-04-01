@@ -18,6 +18,13 @@ public class FrameRetiroAdopcionAnimales extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         deptoLog = new DeptoLogistica();
+        retiros = deptoLog.showListRetiros();
+        adopciones = deptoLog.showListAdopciones();
+        ImplementarTablas();
+        LlenarListas();
+    }
+    
+    void ImplementarTablas(){
         modeloTablaAnimalesRetirados = new DefaultTableModel();
         modeloTablaAnimalesAdoptados = new DefaultTableModel();
         tblAnimalRetirado.setModel(modeloTablaAnimalesRetirados);
@@ -28,12 +35,9 @@ public class FrameRetiroAdopcionAnimales extends javax.swing.JFrame {
         columnaAnimalesAdoptados[0] = "Código del animal y nombre del adoptante";
         modeloTablaAnimalesRetirados.setColumnIdentifiers(columnaAnimalesRetirados);
         modeloTablaAnimalesAdoptados.setColumnIdentifiers(columnaAnimalesAdoptados);
-        retiros = deptoLog.showListRetiros();
-        adopciones = deptoLog.showListAdopciones();
-        LlenarListas();
     }
     
-    private void LlenarListas(){
+    void LlenarListas(){
         modeloTablaAnimalesRetirados.getDataVector().removeAllElements();
         modeloTablaAnimalesAdoptados.getDataVector().removeAllElements();
         tblAnimalRetirado.updateUI();
@@ -82,7 +86,7 @@ public class FrameRetiroAdopcionAnimales extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tblAnimalAdoptado);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 400, 420));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 110, 480, 420));
 
         tblAnimalRetirado.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
         tblAnimalRetirado.setModel(new javax.swing.table.DefaultTableModel(
@@ -95,7 +99,7 @@ public class FrameRetiroAdopcionAnimales extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblAnimalRetirado);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 390, 420));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 440, 420));
 
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Logo1.png"))); // NOI18N
         jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 160));
@@ -106,7 +110,7 @@ public class FrameRetiroAdopcionAnimales extends javax.swing.JFrame {
 
         JLabel3.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         JLabel3.setText("Animales adoptados");
-        jPanel1.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, -1, -1));
+        jPanel1.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 80, -1, -1));
 
         JLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 24)); // NOI18N
         JLabel2.setText("Lista de animales retirados y adoptados");

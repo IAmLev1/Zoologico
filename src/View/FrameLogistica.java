@@ -29,7 +29,7 @@ public class FrameLogistica extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroupTipoDeAnimal = new javax.swing.ButtonGroup();
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroupTipoAnimalRetirar = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
         jButtonVolver = new javax.swing.JButton();
@@ -276,7 +276,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         });
         jPanel4.add(btnRetiroAnimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
 
-        buttonGroup1.add(rbDomes);
+        buttonGroupTipoAnimalRetirar.add(rbDomes);
         rbDomes.setText("Domestico");
         rbDomes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,12 +285,13 @@ public class FrameLogistica extends javax.swing.JFrame {
         });
         jPanel4.add(rbDomes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
+        buttonGroupTipoAnimalRetirar.add(rbSalva);
         rbSalva.setText("Salvaje");
         jPanel4.add(rbSalva, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 370, 160));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoNuevo.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo1.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1660, -1));
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 190, 40));
 
@@ -343,8 +344,8 @@ public class FrameLogistica extends javax.swing.JFrame {
             retirarAnimalS(deptoLog.showListAnimSalvajes(), codAnimal);
         }
         
-        registroAnimalClean();
-
+        retiroAnimalClean();
+        
     }//GEN-LAST:event_btnRetiroAnimal1ActionPerformed
 
     void retirarAnimalD(List<AnimalDomestico> lista, String codAnimal) {
@@ -354,11 +355,13 @@ public class FrameLogistica extends javax.swing.JFrame {
 
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i).getCodigo().equals(codAnimal)) {
-                retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado.\tMotivo: " + motivoRetiro;
+                retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado. Motivo: " + motivoRetiro;
                 deptoLog.ingresarRetiros(retiro);
                 deptoLog.eliminarAnimalDomestico(codAnimal);
-                JOptionPane.showMessageDialog(null, "El ánimal ha sido eliminado exitosamente");
-                }
+                JOptionPane.showMessageDialog(null, "El animal ha sido eliminado exitosamente");
+                } else {
+                JOptionPane.showMessageDialog(null, "El animal que desea retirar no existe o no pertenece a ese tipo de animal.");
+            }
         }
 
     }
@@ -370,11 +373,13 @@ public class FrameLogistica extends javax.swing.JFrame {
 
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i).getCodigo().equals(codAnimal)) {
-                retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado.\tMotivo: " + motivoRetiro;
+                retiro = "El ánimal con el código: " + codAnimal + " ha sido eliminado. Motivo: " + motivoRetiro;
                 deptoLog.ingresarRetiros(retiro);
                 deptoLog.eliminarAnimalSalvaje(codAnimal);
                 JOptionPane.showMessageDialog(null, "El ánimal ha sido eliminado exitosamente");
-                }
+                } else {
+                JOptionPane.showMessageDialog(null, "El animal que desea retirar no existe o no pertenece a ese tipo de animal.");
+            }
         }
 
     }
@@ -398,7 +403,7 @@ public class FrameLogistica extends javax.swing.JFrame {
         if (edad >= 18) {
             for (int i = 0; i < deptoLog.showListAnimDomesticos().size(); i++) {
                 if (deptoLog.showListAnimDomesticos().get(i).getCodigo().equals(codAnim)) {
-                    adopcion = "El animal con el código: " + codAnim + "ha sido adoptado por: " + nombre;
+                    adopcion = "El animal con el código: " + codAnim + " ha sido adoptado por: " + nombre;
                     deptoLog.ingresarAdopciones(adopcion);
                     deptoLog.eliminarAnimalDomestico(codAnim);
                     JOptionPane.showMessageDialog(null, "Adopción exitosa");
@@ -455,7 +460,7 @@ public class FrameLogistica extends javax.swing.JFrame {
     }
     
     void retiroAnimalClean(){
-        buttonGroup1.clearSelection();
+        buttonGroupTipoAnimalRetirar.clearSelection();
         txtCodigoAnimalBusq.setText("");
         txtMotivoRetiro.setText("");
     }
@@ -473,7 +478,7 @@ public class FrameLogistica extends javax.swing.JFrame {
     private javax.swing.JLabel Logo;
     private javax.swing.JButton btnIngresoAnimal;
     private javax.swing.JButton btnRetiroAnimal1;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroupTipoAnimalRetirar;
     private javax.swing.ButtonGroup buttonGroupTipoDeAnimal;
     private javax.swing.JComboBox<String> cbNivelPeligrosidad;
     private javax.swing.JButton jButtonAdoptarAnimal;

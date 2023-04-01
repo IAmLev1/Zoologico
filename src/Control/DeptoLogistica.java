@@ -16,7 +16,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class DeptoLogistica {
 
     private static List<AnimalDomestico> animDomesticos = new ArrayList<AnimalDomestico>();
@@ -105,7 +104,7 @@ public class DeptoLogistica {
             tablaImagenTexto.addCell(celdaImagen);
 
             // Agrego la celda del texto
-            Paragraph texto = new Paragraph("Zoológico MI PAI\nChina japon\ntel: +57 9999999999");
+            Paragraph texto = new Paragraph("Zoológico MI PAI\nColombia, Medellín, El güeco\ntel: +57 9999999999");
             PdfPCell celdaTexto = new PdfPCell(texto);
             celdaTexto.setBorder(Rectangle.NO_BORDER);
             celdaTexto.setVerticalAlignment(0);
@@ -134,7 +133,6 @@ public class DeptoLogistica {
                 tabla.addCell(listaClientes.get(i).getPlan().getNumPlan());
                 tabla.addCell(listaClientes.get(i).getPlan().getAdiciones());
                 tabla.addCell("$ " + listaClientes.get(i).getDinero());
-
             }
 
             // Agregar la tabla al documento

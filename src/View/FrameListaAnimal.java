@@ -20,6 +20,13 @@ public class FrameListaAnimal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         deptoLog = new DeptoLogistica();
+        listaAnimalesDomesticos = deptoLog.showListAnimDomesticos();
+        listaAnimalesSalvajes = deptoLog.showListAnimSalvajes();
+        ImplementarTablas();
+        LlenarListas(); 
+    }
+    
+    void ImplementarTablas(){
         modeloTablaAnimalesDomesticos = new DefaultTableModel();
         modeloTablaAnimalesSalvajes = new DefaultTableModel();
         tblAnimalDomestico.setModel(modeloTablaAnimalesDomesticos);
@@ -34,9 +41,6 @@ public class FrameListaAnimal extends javax.swing.JFrame {
         columnaAnimalesSalvajes[2] = "Peligrosidad";
         modeloTablaAnimalesDomesticos.setColumnIdentifiers(columnaAnimalesDomesticos);
         modeloTablaAnimalesSalvajes.setColumnIdentifiers(columnaAnimalesSalvajes);
-        listaAnimalesDomesticos = deptoLog.showListAnimDomesticos();
-        listaAnimalesSalvajes = deptoLog.showListAnimSalvajes();
-        LlenarListas();
     }
     
     void LlenarListas(){
@@ -147,7 +151,7 @@ public class FrameListaAnimal extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 110, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoNuevo.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo1.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 550));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 550));
